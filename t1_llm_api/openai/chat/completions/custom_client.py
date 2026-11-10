@@ -16,6 +16,18 @@ class CustomOpenAIClient(BaseOpenAIClient):
     how to interact with the API directly.
     """
 
+    def _headers(self) -> dict:
+        # BaseOpenAIClient stores the key already formatted as "Bearer <key>"
+        return {
+            "Authorization": self._api_key,
+            "Content-Type": "application/json",
+        }
+
+    def _prepare_messages(self, messages: list[Message]) -> list[dict]:
+        history = [Message(role=Role.SYSTEM, content=self._system_prompt)]
+        history.extend(m for m in messages if m.role != Role.SYSTEM)
+        return [m.to_dict() for m in history]
+
     def response(self, messages: list[Message], **kwargs) -> Message:
         """
         Get a synchronous response using raw HTTP POST request.
@@ -35,15 +47,24 @@ class CustomOpenAIClient(BaseOpenAIClient):
             The system prompt is automatically prepended to the messages.
             The response is printed to stdout before being returned.
         """
-        #TODO:
-        # https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create
-        # - Prepare headers with authorization and content type
-        # - Prepare message history with System prompt
-        # - Execute post request to AI API (use `requests`)
-        # - Parse response
-        # - Print response to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        response = requests.post(
+            self._endpoint,
+            headers=self._headers(),
+            json={
+                "model": self._model_name,
+                "messages": self._prepare_messages(messages),
+            },
+        )
+        if response.status_code != 200:
+            raise Exception(f"OpenAI API error {response.status_code}: {response.text}")
+
+        choices = response.json().get("choices", [])
+        if not choices:
+            raise ValueError("OpenAI API returned no choices")
+
+        content = choices[0]["message"].get("content") or ""
+        print(content)
+        return Message(role=Role.ASSISTANT, content=content)
 
     async def stream_response(self, messages: list[Message], **kwargs) -> Message:
         """
@@ -64,13 +85,33 @@ class CustomOpenAIClient(BaseOpenAIClient):
             Each token is printed to stdout as it arrives.
             Uses Server-Sent Events (SSE) format where each line starts with "data: ".
         """
-        #TODO:
-        # https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create (Streaming tab)
-        # - Prepare headers with authorization and content type
-        # - Prepare message history with System prompt
-        # - Execute post request to AI API (use `aihttp`)
-        # - Handle stream with chunks
-        # - Parse response
-        # - Print chunks to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        payload = {
+            "model": self._model_name,
+            "messages": self._prepare_messages(messages),
+            "stream": True,
+        }
+        content = ""
+        async with aiohttp.ClientSession() as session:
+            async with session.post(self._endpoint, headers=self._headers(), json=payload) as response:
+                if response.status != 200:
+                    raise Exception(f"OpenAI API error {response.status}: {await response.text()}")
+
+                async for raw_line in response.content:
+                    line = raw_line.decode("utf-8").strip()
+                    if not line.startswith("data: "):
+                        continue
+                    data = line[len("data: "):]
+                    if data == "[DONE]":
+                        break
+
+                    chunk = json.loads(data)
+                    choices = chunk.get("choices", [])
+                    if not choices:
+                        continue
+                    delta = choices[0].get("delta", {}).get("content")
+                    if delta:
+                        print(delta, end="", flush=True)
+                        content += delta
+
+        print()
+        return Message(role=Role.ASSISTANT, content=content)

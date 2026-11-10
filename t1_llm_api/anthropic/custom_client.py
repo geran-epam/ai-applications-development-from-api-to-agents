@@ -36,15 +36,28 @@ class CustomAnthropicAIClient(AIClient):
             Claude's API returns content as an array of content blocks.
             The response is printed to stdout before being returned.
         """
-        #TODO:
-        # https://docs.anthropic.com/en/api/messages-examples
-        # - Prepare headers with api key, anthropic version and content type
-        # - Add System prompt
-        # - Execute post request to AI API (use `requests`)
-        # - Parse response
-        # - Print response to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        headers = {
+            "x-api-key": self._api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        }
+        payload = {
+            "model": self._model_name,
+            "max_tokens": kwargs.get("max_tokens", 1024),
+            "system": self._system_prompt,
+            "messages": [m.to_dict() for m in messages if m.role != Role.SYSTEM],
+        }
+        response = requests.post(self._endpoint, headers=headers, json=payload)
+        if response.status_code != 200:
+            raise Exception(f"Anthropic API error {response.status_code}: {response.text}")
+
+        content_blocks = response.json().get("content", [])
+        if not content_blocks:
+            raise ValueError("Anthropic API returned no content blocks")
+
+        content = "".join(block["text"] for block in content_blocks if block.get("type") == "text")
+        print(content)
+        return Message(role=Role.ASSISTANT, content=content)
 
     async def stream_response(self, messages: list[Message], **kwargs) -> Message:
         """
@@ -66,14 +79,36 @@ class CustomAnthropicAIClient(AIClient):
             Stops processing when 'message_stop' event is received.
             Each delta is printed to stdout as it arrives.
         """
-        #TODO:
-        # https://docs.anthropic.com/en/docs/build-with-claude/streaming
-        # - Prepare headers with api key, anthropic version and content type
-        # - Add System prompt
-        # - Execute post request to AI API (use `aihttp`)
-        # - Handle stream with chunks
-        # - Parse response
-        # - Print chunks to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        headers = {
+            "x-api-key": self._api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        }
+        payload = {
+            "model": self._model_name,
+            "max_tokens": kwargs.get("max_tokens", 1024),
+            "system": self._system_prompt,
+            "messages": [m.to_dict() for m in messages if m.role != Role.SYSTEM],
+            "stream": True,
+        } 
+        content = ""
+        async with aiohttp.ClientSession() as session:
+            async with session.post(self._endpoint, headers=headers, json=payload) as response:
+                if response.status != 200:
+                    raise Exception(f"Anthropic API error {response.status}: {await response.text()}")
+
+                async for raw_line in response.content:
+                    line = raw_line.decode("utf-8").strip()
+                    if not line.startswith("data: "):
+                        continue
+
+                    event = json.loads(line[len("data: "):])
+                    if event["type"] == "message_stop":
+                        break
+                    if event["type"] == "content_block_delta" and event["delta"]["type"] == "text_delta":
+                        text = event["delta"]["text"]
+                        print(text, end="", flush=True)
+                        content += text
+
+        return Message(role=Role.ASSISTANT, content=content)
 

@@ -13,7 +13,7 @@ import os
 DEFAULT_SYSTEM_PROMPT = "You are an assistant who answers concisely and informatively."
 
 # OpenAI API configuration
-OPENAI_HOST = "https://api.openai.com"
+OPENAI_HOST = "https://openrouter.ai/api"
 OPENAI_CHAT_COMPLETIONS_ENDPOINT = f"{OPENAI_HOST}/v1/chat/completions"
 OPENAI_RESPONSES_ENDPOINT = f"{OPENAI_HOST}/v1/responses"
 OPENAI_EMBEDDINGS_ENDPOINT = f"{OPENAI_HOST}/v1/embeddings"
@@ -26,12 +26,12 @@ OPENAI_LUNA_MODEL = "gpt-5.6-luna"
 OPENAI_EMBEDDINGS_MODEL = "text-embedding-3-small"
 
 # Anthropic API configuration
-ANTHROPIC_ENDPOINT = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_ENDPOINT = "https://openrouter.ai/api/v1/messages"
 ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY', '')
 # Claude Sonnet 5 rejects non-default `temperature`/`top_p`/`top_k` and `budget_tokens` thinking, and runs adaptive
 # thinking by default (responses can start with a `thinking` block). Claude Haiku 4.5 still supports them
-ANTHROPIC_SONNET_MODEL = "claude-sonnet-5"
-ANTHROPIC_HAIKU_MODEL = "claude-haiku-4-5"
+ANTHROPIC_SONNET_MODEL = "claude-sonnet-5.5"
+ANTHROPIC_HAIKU_MODEL = "claude-haiku-5.5"
 
 # Google Gemini API configuration
 GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models"

@@ -24,17 +24,22 @@ class OpenAIClient(BaseOpenAIClient):
         Initialize the OpenAI Chat Completions client with SDK.
 
         Args:
-            endpoint (str): The OpenAI API endpoint (for compatibility, not used by SDK).
+            endpoint (str): The chat completions endpoint URL; its base URL is passed to the SDK.
             model_name (str): The OpenAI model to use (e.g., 'gpt-5.6-terra').
             system_prompt (str): The system message to guide the model's behavior.
             api_key (str): The OpenAI API key for authentication.
         """
-        #TODO:
-        # Call to __init__ of super class
-        # Add OpenAI and AsyncOpenAI clients https://github.com/openai/openai-python?tab=readme-ov-file#usage
-        # (In readme you can find samples with both of these clients)
-        # Useful link with request/response samples https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create
-        raise NotImplementedError
+        super().__init__(endpoint, model_name, system_prompt, api_key)
+        # The SDK appends "/chat/completions" itself, so it needs the base URL only.
+        # It also adds the Bearer prefix itself, so pass the raw key.
+        base_url = endpoint.removesuffix("/chat/completions")
+        self._client = OpenAI(api_key=api_key, base_url=base_url)
+        self._async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
+
+    def _prepare_messages(self, messages: list[Message]) -> list[dict]:
+        history = [Message(role=Role.SYSTEM, content=self._system_prompt)]
+        history.extend(m for m in messages if m.role != Role.SYSTEM)
+        return [m.to_dict() for m in history]
 
     def response(self, messages: list[Message], **kwargs) -> Message:
         """
@@ -51,12 +56,13 @@ class OpenAIClient(BaseOpenAIClient):
             The system prompt is automatically prepended to the messages.
             The response is printed to stdout before being returned.
         """
-        #TODO:
-        # - Prepare message history with System prompt
-        # - Call client
-        # - Print response to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        response = self._client.chat.completions.create(
+            model=self._model_name,
+            messages=self._prepare_messages(messages),
+        )
+        content = response.choices[0].message.content or ""
+        print(content)
+        return Message(role=Role.ASSISTANT, content=content)
 
     async def stream_response(self, messages: list[Message], **kwargs) -> Message:
         """
@@ -76,10 +82,18 @@ class OpenAIClient(BaseOpenAIClient):
             The system prompt is automatically prepended to the messages.
             Each token is printed to stdout as it arrives for real-time display.
         """
-        #TODO:
-        # - Prepare message history with System prompt
-        # - Call client with streaming mode
-        # - Handle stream with chunks
-        # - Print response to console
-        # - Return ASSISTANT message
-        raise NotImplementedError
+        stream = await self._async_client.chat.completions.create(
+            model=self._model_name,
+            messages=self._prepare_messages(messages),
+            stream=True,
+        )
+        content = ""
+        async for chunk in stream:
+            if not chunk.choices:
+                continue
+            delta = chunk.choices[0].delta.content
+            if delta:
+                print(delta, end="", flush=True)
+                content += delta
+        print()
+        return Message(role=Role.ASSISTANT, content=content)
