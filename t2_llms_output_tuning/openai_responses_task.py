@@ -14,28 +14,72 @@ from commons.constants import OPENAI_TERRA_MODEL
 #  Query: "Give me a name for a coffee shop"
 #  Try: temperature=0.0 vs temperature=2.0, compare outputs
 #  ⚠️ Note: GPT-5.6 accepts a non-default temperature only with reasoning={"effort": "none"}
+run(
+    step=1,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning={"effort": "none"},  # required for non-default temperature
+    temperature=0.0,  # try 0.0 vs 2.0
+)
 
 # TODO 2: top_p — nucleus sampling. Range: 0.0-1.0, default: 1.0
 #  Query: "List 5 alternative uses for a paperclip"
 #  Try: top_p=0.1 vs top_p=0.9
 #  ⚠️ Note: GPT-5.6 accepts top_p only with reasoning={"effort": "none"}
+run(
+    step=2,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning={"effort": "none"},  # required for non-default top_p
+    top_p=0.1,  # try 0.1 vs 0.9
+)
 
 # TODO 3: max_output_tokens — max tokens in response (was "max_tokens" in Chat Completions)
 #  Query: "Explain quantum computing"
 #  Try: max_output_tokens=50 vs max_output_tokens=2048
+run(
+    step=3,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    max_output_tokens=50,  # try 50 vs 2048
+)
 
 # TODO 4: text — structured output format (replaces "response_format" from Chat Completions)
 #  Uses text={"format": {...}} instead of response_format={...}
 #  Query: "List 3 programming languages with their year of creation"
 #  Try: text={"format": {"type": "json_schema", "name": "languages", "strict": True, "schema": {"type": "object", "properties": {"languages": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}, "required": ["name", "year"], "additionalProperties": False}}}, "required": ["languages"], "additionalProperties": False}}}
+run(
+    step=4,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    text={"format": {"type": "json_schema", "name": "languages", "strict": True, "schema": {"type": "object", "properties": {"languages": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}, "required": ["name", "year"], "additionalProperties": False}}}, "required": ["languages"], "additionalProperties": False}}},
+)
 
 # TODO 5: truncation — controls how long contexts are handled. Default: "disabled"
 #  "auto" = drops older input messages to fit context window
 #  Try: truncation="auto"
+run(
+    step=5,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    truncation="auto",
+)
 
 # TODO 6: metadata — attach key-value pairs to a response for tracking/filtering. Not available in Chat Completions
 #  Up to 16 key-value pairs, keys up to 64 chars, values up to 512 chars
 #  Try: metadata={"project": "demo", "user": "student-1"}
+run(
+    step=6,
+    client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    metadata={"project": "demo", "user": "student-1"},
+)
 
 # TODO 7: reasoning — extended thinking config (replaces "reasoning_effort" from Chat Completions)
 #  ⚠️ Note: non-default temperature/top_p work only with reasoning={"effort": "none"}
@@ -43,8 +87,9 @@ from commons.constants import OPENAI_TERRA_MODEL
 #  Try: reasoning={"effort": "high"} vs reasoning={"effort": "low"}
 
 run(
+    step=7,
     client=OpenAIResponsesClient(OPENAI_TERRA_MODEL),
-    print_request=True, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
-
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning={"effort": "low"},  # try "low" vs "high"
 )

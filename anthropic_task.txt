@@ -1,0 +1,451 @@
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 1> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "temperature": 0.0
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "How about **\"The Daily Grind\"**? It's a classic coffee-themed name with a playful nod to both the coffee beans and the routine of everyday life.\n\nOther ideas:\n- **Bean There Cafe**\n- **Brew & Behold**\n- **Steam & Story**\n- **The Roasted Owl**\n- **Velvet Cup Coffee Co.**\n\nLet me know if you want names with a particular vibe, like cozy, modern, or quirky.",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrGASCiwbT2mTPiEEfV",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 7.8e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 7.6e-05,
+      "upstream_inference_cost": 7.8e-05,
+      "upstream_inference_prompt_cost": 2e-06
+    },
+    "inference_geo": "global",
+    "input_tokens": 20,
+    "is_byok": false,
+    "output_tokens": 152,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 1> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 2> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 5 alternative uses for a paperclip"
+    }
+  ],
+  "top_p": 0.1
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "Here are five alternative uses for a paperclip:\n\n1. **Zipper pull:** Thread a paperclip through the hole of a broken zipper tab to give yourself something to grip.\n2. **Phone SIM ejector:** Straighten the clip and push one end into the small hole beside the SIM tray to pop it open.\n3. **Picture hanger:** Bend a paperclip into a small hook and use it to hang a lightweight picture or ornament from a thin nail or cord.\n4. **Lock pick (for practice):** Bend two clips into the shape of a tension wrench and pick, as a fun puzzle, though it's best used only on locks you own.\n5. **Cable organizer:** Clip several paperclips onto the edge of a desk or shelf to hold charging cables or earbud wires in place.",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrJYzKuyXV9HJf99AmU",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 0.0001343,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000132,
+      "upstream_inference_cost": 0.0001343,
+      "upstream_inference_prompt_cost": 2.3e-06
+    },
+    "inference_geo": "global",
+    "input_tokens": 23,
+    "is_byok": false,
+    "output_tokens": 264,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 2> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 3> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Write a one-sentence story about a robot"
+    }
+  ],
+  "top_k": 1
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "A lonely maintenance robot in an abandoned city spent a hundred years sweeping empty streets, until one day it found a child's drawing of itself taped to a lamppost and, for the first time, felt something it could not name.",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrLgtPPZMyebP8nim3j",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 3.81e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 3.6e-05,
+      "upstream_inference_cost": 3.81e-05,
+      "upstream_inference_prompt_cost": 2.1e-06
+    },
+    "inference_geo": "global",
+    "input_tokens": 21,
+    "is_byok": false,
+    "output_tokens": 72,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 3> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 4> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Count from 1 to 20, comma separated"
+    }
+  ],
+  "stop_sequences": [
+    "10"
+  ]
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, ",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrPREdqt8Xbm8vogHc9",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "stop_sequence",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 1.62e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 1.4e-05,
+      "upstream_inference_cost": 1.62e-05,
+      "upstream_inference_prompt_cost": 2.2e-06
+    },
+    "inference_geo": "global",
+    "input_tokens": 22,
+    "is_byok": false,
+    "output_tokens": 28,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 4> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 5> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "output_config": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "year"
+              ]
+            }
+          }
+        },
+        "required": [
+          "languages"
+        ]
+      }
+    }
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "{\"languages\": [{\"name\": \"Fortran\", \"year\": 1957}, {\"name\": \"Python\", \"year\": 1991}, {\"name\": \"C\", \"year\": 1972}]}",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrS93t5M3wRbSQoFU4r",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Azure",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 5.93e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 2.9e-05,
+      "upstream_inference_cost": 5.93e-05,
+      "upstream_inference_prompt_cost": 3.03e-05
+    },
+    "inference_geo": "global",
+    "input_tokens": 303,
+    "is_byok": false,
+    "output_tokens": 58,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 5> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+AnthropicAIClient - TODO 6> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/messages
+
+📋 Headers:
+  x-api-key: sk-or-v1...5adb
+  Content-Type: application/json
+  anthropic-version: 2023-06-01
+
+📝 Request Body:
+{
+  "model": "claude-haiku-5.5",
+  "max_tokens": 8000,
+  "messages": [
+    {
+      "role": "user",
+      "content": "How many r's are in the word strawberry?"
+    }
+  ],
+  "thinking": {
+    "type": "enabled",
+    "budget_tokens": 5000
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "container": null,
+  "content": [
+    {
+      "citations": [],
+      "text": "There are **3** r's in \"strawberry\": s-t-r-**a**-w-b-e-r-r-y. The r's appear at positions 3, 8, and 9.",
+      "type": "text"
+    }
+  ],
+  "context_management": null,
+  "id": "msg_011CgvrVUNZXbMrLaW2MkcJq",
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cost": 3.01e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 2.8e-05,
+      "upstream_inference_cost": 3.01e-05,
+      "upstream_inference_prompt_cost": 2.1e-06
+    },
+    "inference_geo": "global",
+    "input_tokens": 21,
+    "is_byok": false,
+    "output_tokens": 56,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}
+=============================================================================================================
+AnthropicAIClient - TODO 6> Exiting the chat. Goodbye!

@@ -21,7 +21,7 @@ class OpenAIResponsesClient(AIClient):
             api_key=f"Bearer {api_key}",
             api_key_header_name="Authorization"
         )
-        self._client = OpenAI(api_key=api_key)
+        self._client = OpenAI(api_key=api_key, base_url=OPENAI_RESPONSES_ENDPOINT.removesuffix("/responses"))
 
     def response(
             self,

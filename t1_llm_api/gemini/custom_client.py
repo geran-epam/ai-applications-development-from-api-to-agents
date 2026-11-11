@@ -9,32 +9,27 @@ from t1_llm_api.base_client import AIClient
 
 class CustomGeminiAIClient(AIClient):
     """
-    Custom HTTP client for Google Gemini API.
+    Custom HTTP client for Gemini via OpenRouter.
 
-    This implementation uses raw HTTP requests (requests/aiohttp) instead of
-    the official SDK, demonstrating how to interact with Gemini's API directly
-    and handle its Server-Sent Events (SSE) streaming format.
+    This implementation uses raw HTTP requests (requests/aiohttp) instead of an SDK.
+    OpenRouter has an OpenAI-compatible API: POST /chat/completions with the model in the
+    request body (Google's own API puts the model in the URL path) and Server-Sent Events
+    for streaming.
     """
 
     def _headers(self) -> dict:
         return {
-            "x-goog-api-key": self._api_key,
+            "Authorization": f"Bearer {self._api_key}",
             "Content-Type": "application/json",
         }
 
     def _payload(self, messages: list[Message], **kwargs) -> dict:
-        # Gemini uses the role 'model' instead of 'assistant'; system messages go to system_instruction
+        history = [Message(role=Role.SYSTEM, content=self._system_prompt)]
+        history.extend(m for m in messages if m.role != Role.SYSTEM)
         return {
-            "system_instruction": {"parts": [{"text": self._system_prompt}]},
-            "contents": [
-                {
-                    "role": "model" if m.role == Role.ASSISTANT else "user",
-                    "parts": [{"text": m.content}],
-                }
-                for m in messages
-                if m.role != Role.SYSTEM
-            ],
-            "generationConfig": {"maxOutputTokens": kwargs.get("max_tokens", 1024)},
+            "model": self._model_name,
+            "messages": [m.to_dict() for m in history],
+            "max_tokens": kwargs.get("max_tokens", 1024),
         }
 
     def response(self, messages: list[Message], **kwargs) -> Message:
@@ -49,34 +44,28 @@ class CustomGeminiAIClient(AIClient):
             Message: The AI's response message.
 
         Raises:
-            ValueError: If the API response contains no candidates.
+            ValueError: If the API response contains no choices.
             Exception: If the HTTP request fails (non-200 status code).
 
         Note:
-            The URL is constructed by appending ':generateContent' to the model endpoint.
-            Uses 'x-goog-api-key' header for authentication.
-            Response candidates contain content parts that are concatenated.
+            The system prompt is automatically prepended to the messages.
+            The response is printed to stdout before being returned.
         """
-        url = f"{self._endpoint}/{self._model_name}:generateContent"
-        response = requests.post(url, headers=self._headers(), json=self._payload(messages, **kwargs))
+        response = requests.post(self._endpoint, headers=self._headers(), json=self._payload(messages, **kwargs))
         if response.status_code != 200:
             raise Exception(f"Gemini API error {response.status_code}: {response.text}")
 
-        candidates = response.json().get("candidates", [])
-        if not candidates:
-            raise ValueError("Gemini API returned no candidates")
+        choices = response.json().get("choices", [])
+        if not choices:
+            raise ValueError("Gemini API returned no choices")
 
-        parts = candidates[0].get("content", {}).get("parts", [])
-        content = "".join(part.get("text", "") for part in parts)
+        content = choices[0]["message"].get("content") or ""
         print(content)
         return Message(role=Role.ASSISTANT, content=content)
 
     async def stream_response(self, messages: list[Message], **kwargs) -> Message:
         """
         Get a streaming response using raw HTTP with Server-Sent Events (SSE).
-
-        The response is streamed using Gemini's SSE format, with text chunks
-        printed immediately as they arrive.
 
         Args:
             messages (list[Message]): The conversation history.
@@ -86,15 +75,13 @@ class CustomGeminiAIClient(AIClient):
             Message: The complete AI response message after all chunks are received.
 
         Note:
-            The URL is constructed with ':streamGenerateContent?alt=sse' endpoint.
             Uses Server-Sent Events (SSE) format where each line starts with "data: ".
-            Each SSE chunk contains candidates with content parts.
             Each text chunk is printed to stdout as it arrives.
         """
-        url = f"{self._endpoint}/{self._model_name}:streamGenerateContent?alt=sse"
+        payload = {**self._payload(messages, **kwargs), "stream": True}
         content = ""
         async with aiohttp.ClientSession() as session:
-            async with session.post(url, headers=self._headers(), json=self._payload(messages, **kwargs)) as response:
+            async with session.post(self._endpoint, headers=self._headers(), json=payload) as response:
                 if response.status != 200:
                     raise Exception(f"Gemini API error {response.status}: {await response.text()}")
 
@@ -102,12 +89,18 @@ class CustomGeminiAIClient(AIClient):
                     line = raw_line.decode("utf-8").strip()
                     if not line.startswith("data: "):
                         continue
+                    data = line[len("data: "):]
+                    if data == "[DONE]":
+                        break
 
-                    chunk = json.loads(line[len("data: "):])
-                    for candidate in chunk.get("candidates", []):
-                        for part in candidate.get("content", {}).get("parts", []):
-                            text = part.get("text", "")
-                            print(text, end="", flush=True)
-                            content += text
+                    chunk = json.loads(data)
+                    choices = chunk.get("choices", [])
+                    if not choices:
+                        continue
+                    delta = choices[0].get("delta", {}).get("content")
+                    if delta:
+                        print(delta, end="", flush=True)
+                        content += delta
 
+        print()
         return Message(role=Role.ASSISTANT, content=content)

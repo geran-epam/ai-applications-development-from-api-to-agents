@@ -8,13 +8,15 @@ def run(
         client: AIClient,
         print_request: bool = True,
         print_only_content: bool = False,
+        step: int | None = None,  # TODO step number, shown in the prompt only (not sent to the API)
         **kwargs
 ) -> None:
     conversation = Conversation()
+    prompt = client.__class__.__name__ + (f" - TODO {step}" if step is not None else "")
 
     print("Type your question or 'exit' to quit.")
     while True:
-        user_input = input("> ").strip()
+        user_input = input(f"{prompt}> ").strip()
     
         if user_input.lower() == "exit":
             print("Exiting the chat. Goodbye!")

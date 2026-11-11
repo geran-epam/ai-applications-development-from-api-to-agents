@@ -1,0 +1,822 @@
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 1> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "reasoning": {
+    "effort": "none"
+  },
+  "temperature": 0.0
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401425.0,
+  "created_at": 1794401424.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401424-lUBvhqYGmiI4LF6nHbJh",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "Juniper & Roast",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_dmm9he24tsb",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "none",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 0.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.000124,
+    "cost_details": {
+      "upstream_inference_cost": 0.000124,
+      "upstream_inference_input_cost": 2.8e-05,
+      "upstream_inference_output_cost": 9.6e-05
+    },
+    "input_tokens": 14,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 8,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 22
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 1> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 2> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "List 5 alternative uses for a paperclip"
+    }
+  ],
+  "reasoning": {
+    "effort": "none"
+  },
+  "top_p": 0.1
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401469.0,
+  "created_at": 1794401466.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401466-OwWYEgB5UDm40gdNAOXp",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "1. **Reset button tool** \u2014 Straighten one end to press recessed reset buttons on routers, electronics, or toys.  \n2. **Bookmark** \u2014 Clip it onto a page to mark your place in a book or notebook.  \n3. **Temporary zipper pull** \u2014 Thread it through a broken zipper tab as a short-term replacement.  \n4. **SIM card ejector** \u2014 Straighten it to open a phone\u2019s SIM tray, if the hole is compatible.  \n5. **Cable organizer** \u2014 Use it to bundle or separate small charging cables and earbuds.",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_c533f8ww1wp",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "none",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.1,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.00147,
+    "cost_details": {
+      "upstream_inference_cost": 0.00147,
+      "upstream_inference_input_cost": 3e-05,
+      "upstream_inference_output_cost": 0.00144
+    },
+    "input_tokens": 15,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 120,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 135
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 2> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 3> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing"
+    }
+  ],
+  "max_output_tokens": 50
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401494.0,
+  "created_at": 1794401491.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401491-KaSR9aJwLVsekq7DHbIe",
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "instructions": null,
+  "max_output_tokens": 50,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "encrypted_content": "gAAAAABq9GTWkk8yiIiYGZHtL9YG6lF3LOsGw4Hi1yWWvV6L4xBMVY04_hATWEwUe9tagn2-XPFfodWxYrQfu0Xrs5_ABnEHb8CkY4-0VNANfCw0jrL_1E9xB1Rc-2RLk_CfmSeiF4PpXG4ui3HcGxA82Ti_YIzhaZXfYOqSqaj9eXdZXIZW0Xn-ajjuWT60wNw_j6nzBZUMXj6yska5S2oyySZkQhlm3XxzXknZW0IYY07DE8nKsKhZ_RaqWZtlGd7nBFT0QfkwPyX2nJEOSFM-vC12_OaaBNM36pS8a6b2Xn_cU5AL0r69IMXzQCdBc2YWnN-ODvz-ADU10yqcTSh_sU6bLhW8qPNwp3BL7Ob9WUfH0meMS4TDsgYSrXZ2KVbly0_1Q3h2cHAPPN89C4BOiFvnnr-qgF8bGUIjpVnyA0y6oe1SDY2IX3pL2-9Y48OrnTITuJgO4FVLqp_GifYe5qOpR3GCC0GyDPlnMaN7sofFy9_BM8v3sT7lQFpFrwNB0ONqnAcLE61ttaJUdvnDbvydkjejnmuyeY5hvXRAgAcjo4pl32WiNTAZGfiMteVRJNoNPLJzgVONIsR0Qa02UmNPAKEmW17yOikcN9YZqKA-zt7BK88zCsWcrozrdGjKUVpgDVsxcoWKElcizVr-SoF8KDA8dGbrvIBPGVPxVbAZeXB96xdK6oHQ_piv5fgwjjNCRKJvP6cVqidxEu2cC--qzXmZM3fAe9iqx8zVKBksfYL7XL5INqRypziTa1n4QiigelIYUfNtIl_Vad9q8houRABBjj6ak0J6qyu4H1DS3SrJByvsQxVzsT-gLuINMP7WrrkU_iXf3yms0vfT2-xqz_woKa4OJEq0x0hJKi8ZJ9gtUk7BNuCYV_nsZHzqnFk81GZ48NwqJ9cFpzaL2Nz6gGmOueAg57IrRcRtvwWg-yj9JtsUKp4jRDDaniHAnjJVebMNB6KZe6W7zLXH0z-XoqFFQmluWlzqnSQXFW1gN8RLK2DHkOlc7F3lAv8xqsDpvgmyvo52nl10P1BQ8J1oPoRYdoCDkEh0FTywH1thEvo_y3mmhp9xCEOiHM2m-Pd-9RI-66wD_kEvNpB1qBrYJ4ZirajpUlzkmLejRPLbH5j8YoUHXtiys-N_fsvQBFbqVMnE7FQsRL5Mox8YaYsoJ1iv_zS2x1ktbr93LQdjTyniTrnEAP9RX9g5tSBHMHPiATToOjd923kimpnG3qrB03_aYXI3JvuGXUQiK73UZ7hgUQfLQ2HNhJrk8cSVgQqQcl0DDnujlJwFePAm6G0wRVZRfGchLgUqd06dADwH7GAUyMGR6bq2qMTDuq32XjgngdvzkVUvP341Xn_jle8Wt0Zu2rOY4cm6wnEcXpW1e7SWB-EqHtyjEHw89QprgleOeQnENuHNPmywh3zzcDKTEOQn2AWB9y_a1Eike7wIvyj57PLxV7UYJ5AVkhIGwTWs0p6GqElG1W0N8Ms2RZWSI_sc1U_j3LjA4X6sir-hcoF54UHmK_ws1GKmI1KP0htGQVtNW_wlOp2hYrEYBCE4JLK51o45djE3JgWIRXIphfOzebp-4GM7hfsvPVka8pVsHJ0hT6ZDZ1MXuRujm7ZJLPIY1OmW3-4Ei69pwVYyl5ilDWgIK97SqLbD38ssHg-eRw3zEuYoQR8OqoaS5YKAxjwOKpZFNbB-J5DF0L0J9hYrMBcc2GQsiylri2jJ2-6zbyY1ppK_z83H_1mlOZdRemSjj6snQYUhQVK0iqX2ZlFAcTIUbz1vPLLQesca9eQh-hPglm-9jQ51YiPowKuRi3mNYJ7-4PZh4V7r0_LmWYBzamVd1ZKJbcstel0TT508TK0gpPRM7bXG5hbpaRcGnlwUeYGiIQM4Mvlc7pb5J3p5HL7UaBEgy0L8p4FLNipk4Gf80MU9ng91msFZMKwF5wDFuHfdLWfFoq7hmc3pY4-qxzDrp43NzUw471kZ5ow2g1CDprD79MtcKQ1xyfKf464yZLuhdbTzvc87ihjoohQUHFwCuHAzkYatA4Z6CcNCRip1mEkrAujbtxCXtulwOJ1814dOO1KPlTVOUVi4z0cP7wAXOM5eiRKDU3crPCYcvRFbHr725jx-wjfMe6ZO3rbmrjy2iU75ehC0wVMHOrq-9teQtgxqTaqSr5BiMuaL5pkxaoA0PDW32Ft_QenwWhAJjkOR1eabpSEQDa6gmwBynI8FoDew11-6v3N1P04h-o-kraPZuqPzImW5nQxh7JVX-PYIc8sVB_biSasM3RlI4gY=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtdGVycmEtMjAyNjA3MDl8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_0de29ad2bc8ab758016af464d4896087d1b94339d47ec79c13",
+      "status": "completed",
+      "summary": [
+        {
+          "text": "**Explaining quantum concepts**\n\nI need to provide a clear explanation for beginners. I should cover key concepts like qubits, superposition, entanglement, and interference. Measurement and gates are important too, along with speedups \u2014 though not for all tasks. I\u2019ll also touch on algorithms and potential errors. It seems like using analogies could help clarify these ideas, but I have to be careful to ensure they\u2019re accurate and not overly complex for the audience.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "Quantum computing is",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_t5vny84f6z",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": "detailed"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "incomplete",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.000618,
+    "cost_details": {
+      "upstream_inference_cost": 0.000618,
+      "upstream_inference_input_cost": 1.8e-05,
+      "upstream_inference_output_cost": 0.0006
+    },
+    "input_tokens": 9,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 50,
+    "output_tokens_details": {
+      "reasoning_tokens": 42
+    },
+    "total_tokens": 59
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 3> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 4> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "name": "languages",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "year"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "languages"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401530.0,
+  "created_at": 1794401528.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401528-CYt71KR1VrkBFlQuSRda",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"languages\":[{\"name\":\"C\",\"year\":1972},{\"name\":\"Python\",\"year\":1991},{\"name\":\"JavaScript\",\"year\":1995}]}",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_5t9wfl0csml",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": "detailed"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "name": "languages",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "languages": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "year"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "languages"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.000598,
+    "cost_details": {
+      "upstream_inference_cost": 0.000598,
+      "upstream_inference_input_cost": 0.000118,
+      "upstream_inference_output_cost": 0.00048
+    },
+    "input_tokens": 59,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 40,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 99
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 4> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 5> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "truncation": "auto"
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401621.0,
+  "created_at": 1794401620.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401620-uimD8A8NAezwYnlzzg4l",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "- **Fortran** \u2014 1957  \n- **C** \u2014 1972  \n- **Python** \u2014 1991",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_au4ogjpeeia",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": "detailed"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "auto",
+  "usage": {
+    "cost": 0.000404,
+    "cost_details": {
+      "upstream_inference_cost": 0.000404,
+      "upstream_inference_input_cost": 3.2e-05,
+      "upstream_inference_output_cost": 0.000372
+    },
+    "input_tokens": 16,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 31,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 47
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 5> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 6> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "metadata": {
+    "project": "demo",
+    "user": "student-1"
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401667.0,
+  "created_at": 1794401666.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401666-O0tBGxYtW8oR5SqDJeu2",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {
+    "project": "demo",
+    "user": "student-1"
+  },
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "- **Fortran** \u2014 1957  \n- **C** \u2014 1972  \n- **Python** \u2014 1991",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_fg47prjgfjb",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": "detailed"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.000404,
+    "cost_details": {
+      "upstream_inference_cost": 0.000404,
+      "upstream_inference_input_cost": 3.2e-05,
+      "upstream_inference_output_cost": 0.000372
+    },
+    "input_tokens": 16,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 31,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 47
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 6> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIResponsesClient - TODO 7> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/responses
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "input": [
+    {
+      "role": "user",
+      "content": "How many r's are in the word strawberry?"
+    }
+  ],
+  "reasoning": {
+    "effort": "low"
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "access_programs": {
+    "cyber": "standard"
+  },
+  "background": false,
+  "completed_at": 1794401706.0,
+  "created_at": 1794401705.0,
+  "error": null,
+  "frequency_penalty": 0,
+  "id": "gen-1794401705-cf8gMahfEWjwgZHm8Gxf",
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "metadata": {},
+  "model": "openai/gpt-5.6-terra",
+  "object": "response",
+  "output": [
+    {
+      "encrypted_content": "gAAAAABq9GWqaEEocEx9F506qAuD-OB6KIU8JeuD4EbpOAHe16ybUH6EvXglDIil3-7ofJpFtLLI-gKHNtPrunOZY_RgOj81BgT0MneUzwkATkCRvbYFEGfGtJjhNxqJbqB7UfdTpm3UKP9H7PmI6aTi_Lo0rCf2sMS2yl5k_qXwuKXrAoKXQFhwuQDsrEZyttKdvQgvBknyPUy4DzRW0RGpRlsPB87RDenK9MxpNt_MJtm3xhyZz4FJwfFil1gZJJpgyUgDfy32bU4xPXwCPa0hef4EpFE5NKWxHeFBgpUprhyg6M7aWtIljrvleS01mIZouX6zQqGeDq4EF17C7qGd0_SQSIR3cUi1NMDxdSfTF2FmzrPylE_m3zTUMX18ine_rpzSi3BBXrS96iOdejDl7ZsL9avXKmsEA79ry2H5FArsmSp_-yFNQZEfTmxJSlzPTO9I2ZKFqkZfaWlFDgVLHGQlE18aHbkaK5feNn5JYsQ137VDBmJpoX5cFyixCuBliuIubE6iq7cpI11IxyKn1SJmeOStGIE0UjPXHfA7SKVIdIUqFkNJT_3Tdb0mPNmHepakF3FISgbntAlK4RlclrwkVj9vaa7qGQZ1gkQv0NwhpaV58pX5OXn8nclUF8qFkozkx3QUVUU6YGZRv7HoEMCv1Yh_nIzED9JixMbK380NwpJf1PK2BI5mkqvbsCssxP7jKQbxJInAcMC99mwGr1LA5bLaVLriY-unxT3OCE8NKa57n0AaW1Vrd--febTYuC2cHrdBM9w0DqX9qt-EZyshRSQ9dQ8G14iK1GjPuPy5BMyQHuaJuYHOzR8meuI0fkIq_mYW1pTDOwidnfUCAdw5-Oubw1CWya2eaTb86_drUiaJG458iwIc3HNvNZL1a5Vnv4FWd7XvfzMYnnpCBxMB6bWtmydHqEU64Hjcqa-Lw45sqsY6vXJhf4zDtrxNMLiF81D_YcWdt9ilqprN5AkSZm8JGgHlpCxjfnB9Xt39QRnPanBsd8xMO9nL6vNUQ1pBANqiDTb7GBK3gSNubWaBEOxXagrzVgmOz46hyDYLTUL0H6c9kTVlFwliAsqkjSNOtO4N6Pd6kiaLRwOaicEMF0mDihlxJdcLNyZzeWR1MGbH9vWHP4dq68DXypIZmcWD0R-o6uz7vpr7X0hdb45i8rkMoo00CmhxLwcZj_FXNgQUTqWe8IFQNswxRHF-VmvDylNecL5EAnVWFYZsF5GRTT7hCh10EsTaWl0ZJiS13YP-lZ6W8eXOfCmQEw7mPDEbwI3AzHx9k-E_TJN82LwycLpLEVeBflS6kqGBTgcVDCJXNR-m47bX5kmOwiZy6htdEL2nPIu_5DGmQaOfHaVZ66m-GnQcMpkkQEvJ5aGiUqjbNvdAJ2SKmk83GN3sNR44J-8R5A6F46Jsqof2ElM7GVNxxzaZuFwZdOXZXRrLDDV11PokYvJJi7Rv1gSSBLoxlfaAbO42TQWZ1vLnpDfn9Iu6wnU3yA0q6r8AEYpSv85BgFwE98FGaTtBPzDG6f_JT4We1D0j2gNZu2UBsik4DC8RNN-DYVFuCDyexnn3v-2uDGScwPFTjM-SiR0kZr2Y5N4MqK4Tj5gvv2aNLYTHxk16XxK1Gb6n2zYYcayLHxLZVrc0oDt1VxAE4eFt6yZYHPV1VVDO_InS_q-FB12ZEqkZvQZRoTS9Ue-c_LiGKVdy75sAbdCX3P25wyPno7ruvn_lmnB52K-0kMiJuvYOadLjYgHNR0gtEKwKMlpB0Rokv5TcYPE7qkwLv6Z7TyqWxEjvqciyPuUVlwxe0KIi4f9tn6QZLK2YQ2GGOADBy0RumuwF4GEayGDmW3gHAP8URmMdH1mUo1ewP-10LlkzoxxrT3p5HA9fDFrbU5FaGaDX2MzFQkeW85hSvw7KgZ4xa7-1O9JQIzEiYBdZYt0VfI5VBiufv9HlfbRQo0wVx9NvPFNz520Gn7ikh_AdYDlDWdA4kHjM03QfzU9G-fDXLgP1rsTQnrp1Z4KY1hn6FRDOFB1l0Ymg26lZDEzV3JLmlBVV.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtdGVycmEtMjAyNjA3MDl8b3BlbmFpIn0",
+      "format": "openai-responses-v1",
+      "id": "rs_008519030327b143016af465aa837887d1923448fa33ea98c9",
+      "status": "completed",
+      "summary": [],
+      "type": "reasoning"
+    },
+    {
+      "content": [
+        {
+          "annotations": [],
+          "logprobs": [],
+          "text": "3",
+          "type": "output_text"
+        }
+      ],
+      "id": "msg_tmp_502rcosxc5p",
+      "phase": "final_answer",
+      "role": "assistant",
+      "status": "completed",
+      "type": "message"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "low",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "text"
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "cost": 0.00044,
+    "cost_details": {
+      "upstream_inference_cost": 0.00044,
+      "upstream_inference_input_cost": 3.2e-05,
+      "upstream_inference_output_cost": 0.000408
+    },
+    "input_tokens": 16,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "is_byok": false,
+    "output_tokens": 34,
+    "output_tokens_details": {
+      "reasoning_tokens": 27
+    },
+    "total_tokens": 50
+  }
+}
+=============================================================================================================
+OpenAIResponsesClient - TODO 7> Exiting the chat. Goodbye!

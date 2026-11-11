@@ -1,5 +1,4 @@
-from google import genai
-from google.genai import types
+from openai import OpenAI, AsyncOpenAI
 
 from commons.models.message import Message
 from commons.models.role import Role
@@ -8,51 +7,41 @@ from t1_llm_api.base_client import AIClient
 
 class GeminiAIClient(AIClient):
     """
-    Client for Google Gemini API using the official SDK.
+    Client for Gemini via OpenRouter using the official OpenAI SDK.
 
-    This implementation uses the official Google GenAI Python library to interact
-    with Gemini models, providing both synchronous and streaming response capabilities.
+    OpenRouter exposes Gemini through an OpenAI-compatible API, so the OpenAI SDK is used
+    (the Google GenAI SDK can only talk to Google's own endpoint).
 
     Attributes:
-        _client (genai.Client): Google GenAI client instance.
+        _client (OpenAI): Synchronous client instance.
+        _async_client (AsyncOpenAI): Asynchronous client instance.
         Inherits all other attributes from AIClient.
     """
 
     def __init__(self, endpoint: str, model_name: str, api_key: str, system_prompt: str):
         """
-        Initialize the Gemini client with SDK.
+        Initialize the Gemini client with the OpenAI SDK pointed at OpenRouter.
 
         Args:
-            endpoint (str): The Gemini API endpoint (for compatibility, not used by SDK).
-            model_name (str): The Gemini model to use (e.g., 'gemini-3-flash-preview').
-            api_key (str): The Google API key for authentication.
+            endpoint (str): The chat completions endpoint URL; its base URL is passed to the SDK.
+            model_name (str): The OpenRouter model ID (e.g., 'google/gemini-3-flash-preview').
+            api_key (str): The OpenRouter API key for authentication.
             system_prompt (str): The system instruction to guide the model's behavior.
         """
         super().__init__(endpoint, model_name, api_key, system_prompt)
-        self._client = genai.Client(api_key=api_key)
+        # The SDK appends "/chat/completions" itself, so it needs the base URL only
+        base_url = endpoint.removesuffix("/chat/completions")
+        self._client = OpenAI(api_key=api_key, base_url=base_url)
+        self._async_client = AsyncOpenAI(api_key=api_key, base_url=base_url)
 
-    def _to_contents(self, messages: list[Message]) -> list[types.Content]:
-        # Gemini uses the role 'model' instead of 'assistant'; system messages go to system_instruction
-        return [
-            types.Content(
-                role="model" if m.role == Role.ASSISTANT else "user",
-                parts=[types.Part(text=m.content)],
-            )
-            for m in messages
-            if m.role != Role.SYSTEM
-        ]
-
-    def _config(self, **kwargs) -> types.GenerateContentConfig:
-        return types.GenerateContentConfig(
-            system_instruction=self._system_prompt,
-            max_output_tokens=kwargs.get("max_tokens", 1024),
-            # No tools are used here, so skip the SDK's default AFC path (and its warning)
-            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
-        )
+    def _prepare_messages(self, messages: list[Message]) -> list[dict]:
+        history = [Message(role=Role.SYSTEM, content=self._system_prompt)]
+        history.extend(m for m in messages if m.role != Role.SYSTEM)
+        return [m.to_dict() for m in history]
 
     def response(self, messages: list[Message], **kwargs) -> Message:
         """
-        Get a synchronous response from Google's Gemini API.
+        Get a synchronous response from Gemini.
 
         Args:
             messages (list[Message]): The conversation history.
@@ -62,21 +51,21 @@ class GeminiAIClient(AIClient):
             Message: The AI's response message.
 
         Note:
-            Gemini uses 'system_instruction' parameter for system-level guidance.
+            The system prompt is automatically prepended to the messages.
             The response is printed to stdout before being returned.
         """
-        response = self._client.models.generate_content(
+        response = self._client.chat.completions.create(
             model=self._model_name,
-            contents=self._to_contents(messages),
-            config=self._config(**kwargs),
+            messages=self._prepare_messages(messages),
+            max_tokens=kwargs.get("max_tokens", 1024),
         )
-        content = response.text or ""
+        content = response.choices[0].message.content or ""
         print(content)
         return Message(role=Role.ASSISTANT, content=content)
 
     async def stream_response(self, messages: list[Message], **kwargs) -> Message:
         """
-        Get a streaming response from Google's Gemini API.
+        Get a streaming response from Gemini.
 
         The response is streamed chunk-by-chunk, with each text chunk printed
         immediately as it arrives.
@@ -87,19 +76,20 @@ class GeminiAIClient(AIClient):
 
         Returns:
             Message: The complete AI response message after all chunks are received.
-
-        Note:
-            Uses the async streaming interface provided by the Gemini SDK.
-            Each chunk's text is printed to stdout as it arrives.
         """
-        content = ""
-        stream = await self._client.aio.models.generate_content_stream(
+        stream = await self._async_client.chat.completions.create(
             model=self._model_name,
-            contents=self._to_contents(messages),
-            config=self._config(**kwargs),
+            messages=self._prepare_messages(messages),
+            max_tokens=kwargs.get("max_tokens", 1024),
+            stream=True,
         )
+        content = ""
         async for chunk in stream:
-            if chunk.text:
-                print(chunk.text, end="", flush=True)
-                content += chunk.text
+            if not chunk.choices:
+                continue
+            delta = chunk.choices[0].delta.content
+            if delta:
+                print(delta, end="", flush=True)
+                content += delta
+        print()
         return Message(role=Role.ASSISTANT, content=content)

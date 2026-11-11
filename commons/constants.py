@@ -34,9 +34,11 @@ ANTHROPIC_SONNET_MODEL = "claude-sonnet-5.5"
 ANTHROPIC_HAIKU_MODEL = "claude-haiku-5.5"
 
 # Google Gemini API configuration
-GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models"
+# Gemini goes through OpenRouter: OpenAI-compatible endpoint, the model is sent in the request body (not the URL path),
+# the key must be an OpenRouter key
+GEMINI_ENDPOINT = f"{OPENAI_HOST}/v1/chat/completions"
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
-GEMINI_FLASH_MODEL = "gemini-3-flash-preview"
+GEMINI_FLASH_MODEL = "google/gemini-3-flash-preview"
 
 # User Service API configuration
 USER_SERVICE_ENDPOINT = "http://localhost:8041"

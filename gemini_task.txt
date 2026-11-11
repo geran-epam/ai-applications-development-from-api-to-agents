@@ -1,0 +1,495 @@
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 1> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "max_tokens": 1024,
+  "temperature": 0.0
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "To give you the best recommendation, I\u2019ve broken these down by the \"vibe\" of the shop you might be opening:\n\n### Modern & Minimalist\n*   **Blank Slate**\n*   **The Daily Draft**\n*   **Origin**\n*   **Common Grounds**\n*   **Form & Function**\n*   **The Counter**\n\n### Cozy & Rustic\n*   **The Hearth**\n*   **Copper & Clove**\n*   **The Nook**\n*   **Wildflower Coffee**\n*   **Velvet Bean**\n*   **The Roost**\n\n### Clever & Punny\n*   **Brewed Awakening**\n*   **Better Latte Than Never**\n*   **The Daily Grind**\n*   **Mug Shot**\n*   **Espresso Yourself**\n*   **Ground Control**\n\n### Sophisticated & European\n*   **Caff\u00e8 Luna**\n*   **The Gilded Bean**\n*   **Avenue Coffee**\n*   **Petit Pause**\n*   **The Roastery**\n*   **Veranda**\n\n### High Energy & Early Morning\n*   **First Light**\n*   **The Jolt**\n*   **Rise & Grind**\n*   **Daybreak**\n*   **The Spark**\n*   **Early Bird**\n\n### Literary & Intellectual\n*   **The Inkwell**\n*   **Paperback Coffee**\n*   **The Study**\n*   **Chapter One**\n*   **Marginalia**\n*   **The Thinking Cap**\n\n### 3 Tips for Choosing the Right Name:\n1.  **Check the URL:** Before you fall in love with a name, see if the website domain and Instagram handle are available.\n2.  **Say it out loud:** \"I'm going to [Name].\" Does it roll off the tongue? Is it easy to hear over a noisy street?\n3.  **Consider your location:** Names like *The Corner Store* or *The Bridge* work great if they describe exactly where you are.\n\n**Which of these styles fits your vision best?** I can give you more specific ideas if you tell me about your decor or target audience!",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a1+Gq6SDxJNWjFu+7KVWci6r4nNHupsUu+kK61/DLimdfx/CKUHhLk32qGgXxMAs01zWxnmMF7VJ5Iq0sNpZfP1KGuQtR9YbDQpQURY19zdd6dBIIqtXytk=",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "STOP"
+    }
+  ],
+  "created": 1794390783,
+  "id": "gen-1794390783-oTiSSuYaDypftqsfuin0",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 476,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.001432,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001428,
+      "upstream_inference_cost": 0.001432,
+      "upstream_inference_prompt_cost": 4e-06
+    },
+    "is_byok": false,
+    "prompt_tokens": 8,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 484
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 1> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 2> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 5 alternative uses for a paperclip"
+    }
+  ],
+  "max_tokens": 1024,
+  "top_p": 0.1
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Here are five alternative uses for a paperclip:\n\n### 1. Emergency Reset Tool\nThe most common tech-related use for a paperclip is resetting electronic devices. By straightening one end, you can reach the tiny \"recessed reset buttons\" on Wi-Fi routers, alarm clocks, or remote controls. It is also the perfect size to pop open the SIM card tray on most smartphones.\n\n### 2. Temporary Hem or Button Fix\nIf you lose a button on your shirt or your pant hem starts to unravel while you\u2019re out, a paperclip can act as a temporary stitch. You can slide it through the fabric to hold a hem in place or thread it through the buttonholes to keep a shirt closed until you can get to a sewing kit.\n\n### 3. Tape \"Start\" Marker\nFinding the end of a roll of clear packing tape or duct tape can be frustrating. When you are finished using the tape, place a paperclip across the sticky side before letting it snap back onto the roll. The next time you need it, you\u2019ll have an easy-to-grab tab.\n\n### 4. Zipper Pull Replacement\nIf the metal tab on your zipper breaks off, it can be nearly impossible to zip up your jacket or bag. You can slide a paperclip through the remaining eyelet of the zipper slider to create a new, functional handle.\n\n### 5. DIY Ornament Hook\nDuring the holidays, paperclips make excellent hooks for Christmas ornaments. Simply pull the two loops of the paperclip apart to create an \"S\" shape. Hook one end through the ornament loop and the other over a tree branch. This also works for hanging light decorations or photos from a string.",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a18G3RKbvlEmsDihvlbhahrMyzGNhgFGmloRcpAEnxMRDHqvQTXN/8U5iZGYxNWrUa+4+fujv+JQ/ECQxVd17sA9yIE70nXzpGEzIW5JcmSQqSWjIK9xNvI=",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "STOP"
+    }
+  ],
+  "created": 1794390929,
+  "id": "gen-1794390929-JHb17DZtf0LxC6BH17CU",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "provisioned",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 354,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.0010665,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001062,
+      "upstream_inference_cost": 0.0010665,
+      "upstream_inference_prompt_cost": 4.5e-06
+    },
+    "is_byok": false,
+    "prompt_tokens": 9,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 363
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 2> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 3> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Write a one-sentence story about a robot"
+    }
+  ],
+  "max_tokens": 1024,
+  "top_k": 1
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The last functioning unit spent its final spark of power planting a single organic seed in the red dust of a silent world.",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a1/LKf6fmMkMTzcJ94clUSmAMZjtdFKvN99XjQd3o6sWICjZLVkl/AKSrTmdOfSUweY2iuAdn7m2zBBGloPgirxpnS4tOBYW7GO5uythQZ8iAnZVMJVOEAs=",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "STOP"
+    }
+  ],
+  "created": 1794390951,
+  "id": "gen-1794390951-gqZK3DHy58eIdKXd05cE",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "provisioned",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 24,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 7.65e-05,
+    "cost_details": {
+      "upstream_inference_completions_cost": 7.2e-05,
+      "upstream_inference_cost": 7.65e-05,
+      "upstream_inference_prompt_cost": 4.5e-06
+    },
+    "is_byok": false,
+    "prompt_tokens": 9,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 33
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 3> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 4> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing"
+    }
+  ],
+  "max_tokens": 50
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "To understand quantum computing, you first have to understand how a normal (classical) computer works.\n\n### 1. The Basics: Bits vs. Qubits\n*   **Classical Computers (Bits):** Every piece of",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a19hcuMhe7EKlwVciXfneKtl7ureZUtChM1vL+rN+13B6PmkYcrgdS1aUHm/TCgfe+sr1KPtSwkZi34mmi7Nzho26HZxbWVfXxO8spGo9P5Y+7PO8tgF6hI=",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "MAX_TOKENS"
+    }
+  ],
+  "created": 1794390979,
+  "id": "gen-1794390979-NGLRhQwYXbbIoBZVyfYH",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 46,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.0001395,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000138,
+      "upstream_inference_cost": 0.0001395,
+      "upstream_inference_prompt_cost": 1.5e-06
+    },
+    "is_byok": false,
+    "prompt_tokens": 3,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 49
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 4> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 5> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "max_tokens": 1024,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "response",
+      "strict": true,
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "year": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "[{\"name\": \"Python\", \"year\": 1991}, {\"name\": \"Java\", \"year\": 1995}, {\"name\": \"C\", \"year\": 1972}]",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a18AOCB+VzPTR2TRcfoaT2JkDBbf79HNoyttZEjLXY13N2sUlgILJnBH+effCUuE+IhEtS6Ff/cp80ZgxECfKhp2hES7Gz2bfr/eTh7MFZ1MSJX0IcLWxI0=",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "STOP"
+    }
+  ],
+  "created": 1794391009,
+  "id": "gen-1794391009-JrWBmUnQqAlC79d1Om8g",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 46,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.0001785,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000138,
+      "upstream_inference_cost": 0.0001785,
+      "upstream_inference_prompt_cost": 4.05e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 81,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 127
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 5> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+GeminiAIClient - TODO 6> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "google/gemini-3-flash-preview",
+  "messages": [
+    {
+      "role": "user",
+      "content": "How many r's are in the word strawberry?"
+    }
+  ],
+  "max_tokens": 1024,
+  "reasoning": {
+    "max_tokens": 5000
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "There are **3** r's in the word strawberry (st**r**awbe**rr**y).",
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "data": "AY89a18uXfkWQ6hJDcLKGGcHxHdYdYVB6QaazYHNgI+F9wzoj0SwlIuM0hP0QH66f6VSGJrS2kodGrO7q0rHuZkk2iM85Pb+OBeKzZQbXwcBrtNG3VKVXzzITXOh8TbMfldh4m/3G5Q0IUsCi/pVQnl+mhR0kj+A74O38j3HwVLjsGmZgFv1TSNHb09N4aUYwoSHowjRl+QelcAlXRuxT5kIfMrGI/DhXSYpLdD+rQoN26tkdzL0kNIMWFxgLRx4LZHD/aG25JIhLprYGJOhYbNY7KkDUKHrwOZueCJGw8JSMxKu9twV9DiAzwh7tlSj1hgAj8R6Ay3JtjwsBCeAiUQCeYi0/Lm4jJLGWicPNEQZXgg7lfWlO2kRJIwjdQjKSebRVWw2mMcAJUSI1d6J79JqecOEl7cKA4t3avWRTewm8pl1eLb3YlWU2FWHxrL668iMyL00dcqe+CaSF3wKd3Fzirp1HF9ne6IWnDeCdsvIeK33mWo+PMns6TOkcKenAnsgajsJPKShmd4mwpjCUnpHh9d4mT4NsGsWFPX1K0Po0XEw063MuJyFLXBToGpxrfgjxh92OCFi6J0bcCPznJsg+QdfHEKz/5+xM5AH86PO2C5LFu7YlZEhl5zUOViqKaOALScfKp9E3qbAMLVHTjjowVTUkP7lxbesENBO3+VmGH6wZSlZCAectc0+",
+            "format": "google-gemini-v1",
+            "index": 0,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "STOP"
+    }
+  ],
+  "created": 1794391038,
+  "id": "gen-1794391038-1bPSEgMCHrDARQlYQ6kw",
+  "model": "google/gemini-3-flash-preview",
+  "object": "chat.completion",
+  "provider": "Google",
+  "service_tier": "provisioned",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 165,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 141
+    },
+    "cost": 0.0005005,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000495,
+      "upstream_inference_cost": 0.0005005,
+      "upstream_inference_prompt_cost": 5.5e-06
+    },
+    "is_byok": false,
+    "prompt_tokens": 11,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 176
+  }
+}
+=============================================================================================================
+GeminiAIClient - TODO 6> Exiting the chat. Goodbye!

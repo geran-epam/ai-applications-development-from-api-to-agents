@@ -9,24 +9,59 @@ from commons.constants import ANTHROPIC_HAIKU_MODEL
 #  Lower = more deterministic, higher = more creative
 #  Query: "Give me a name for a coffee shop"
 #  Try: temperature=0.0 vs temperature=1.0, compare outputs
+run(
+    step=1,
+    client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    temperature=0.0,  # try 0.0 vs 1.0
+)
 
 # TODO 2: top_p — nucleus sampling, keeps tokens within cumulative probability. Range: 0.0-1.0, default: 1.0 (disabled)
 #  Lower = fewer token choices, more focused output
 #  Query: "List 5 alternative uses for a paperclip"
 #  Try: top_p=0.1 vs top_p=0.9
+run(
+    step=2,
+    client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    top_p=0.1,  # try 0.1 vs 0.9 (Claude 4.x: do not combine with temperature)
+)
 
 # TODO 3: top_k — limits token selection to top K candidates. Default: not set (disabled)
 #  Lower = fewer choices per token, more predictable
 #  Query: "Write a one-sentence story about a robot"
 #  Try: top_k=1 vs top_k=50
+run(
+    step=3,
+    client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    top_k=1,  # try 1 vs 50
+)
 
 # TODO 4: stop_sequences — list of strings that stop generation when encountered
 #  Query: "Count from 1 to 20, comma separated"
 #  Try: stop_sequences=["10"] — generation stops before reaching 10
+run(
+    step=4,
+    client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    stop_sequences=["10"],
+)
 
 # TODO 5: output_config — enforce structured JSON output
 #  Query: "List 3 programming languages with their year of creation"
 #  Try: output_config={"format":{"type": "json_schema", "schema": {"type": "object", "additionalProperties": False, "properties": {"languages": {"type": "array", "items": {"type": "object", "additionalProperties": False, "properties": {"name": {"type": "string"}, "year": {"type": "integer"}},"required": ["name", "year"]}}}}}}
+run(
+    step=5,
+    client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    output_config={"format": {"type": "json_schema", "schema": {"type": "object", "additionalProperties": False, "properties": {"languages": {"type": "array", "items": {"type": "object", "additionalProperties": False, "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}, "required": ["name", "year"]}}}, "required": ["languages"]}}},
+)
 
 # TODO 6: thinking — enables extended thinking (chain-of-thought). Requires budget_tokens param
 #  Model reasons step-by-step before answering. Needs max_tokens > budget_tokens
@@ -34,8 +69,10 @@ from commons.constants import ANTHROPIC_HAIKU_MODEL
 #  Try: thinking={"type": "enabled", "budget_tokens": 5000}, max_tokens=8000
 
 run(
+    step=6,
     client=AnthropicAIClient(ANTHROPIC_HAIKU_MODEL),
-    print_request=True, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
-
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    thinking={"type": "enabled", "budget_tokens": 5000},
+    max_tokens=8000,  # must be > budget_tokens
 )

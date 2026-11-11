@@ -6,6 +6,13 @@ from commons.constants import OPENAI_TERRA_MODEL
 #  ⚠️ Note: NOT available in Responses API
 #  Query: "Give me a name for a coffee shop"
 #  Try: n=3 — returns 3 different completions in choices[]
+run(
+    step=1,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    n=3,  # 3 completions in choices[]; only the first one is added to the history
+)
 
 # TODO 2: temperature — controls randomness. Range: 0.0-2.0, default: 1.0
 #  Lower = more deterministic, higher = more creative
@@ -13,44 +20,104 @@ from commons.constants import OPENAI_TERRA_MODEL
 #  Try: temperature=0.0 vs temperature=2.0, compare outputs
 #  ⚠️ Note: GPT-5.6 accepts a non-default temperature only with reasoning_effort="none"
 #  ⚠️ Note: it is okay that after temperature=1.5 you get some odd characters in output 😅
+run(
+    step=2,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning_effort="none",  # required for non-default temperature
+    temperature=0.0,  # try 0.0 vs 2.0
+)
 
 # TODO 3: top_p — nucleus sampling, keeps tokens within cumulative probability. Range: 0.0-1.0, default: 1.0
 #  Lower = fewer token choices, more focused output
 #  Query: "List 5 alternative uses for a paperclip"
 #  Try: top_p=0.1 vs top_p=0.9
 #  ⚠️ Note: GPT-5.6 accepts top_p only with reasoning_effort="none"
+run(
+    step=3,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning_effort="none",  # required for non-default top_p
+    top_p=0.1,  # try 0.1 vs 0.9
+)
 
 # TODO 4: max_tokens — max number of tokens in the response. Default: model-dependent
 #  ⚠️ Note: Will work for models like gpt-4o. For gpt-5+ - `max_completion_tokens`.
 #  Query: "Explain quantum computing"
 #  Try: max_tokens=50 vs max_tokens=2048
+run(
+    step=4,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    max_completion_tokens=50,  # gpt-5+ name of max_tokens; try 50 vs 2048
+)
 
 # TODO 5: stop — list of strings (up to 4) that stop generation when encountered
 #  ⚠️ Note: Will work for models like gpt-4o
 #  Query: "Count from 1 to 20, comma separated"
 #  Try: stop=["5"] — generation stops before reaching 5
+run(
+    step=5,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    stop=["5"],  # NOTE: gpt-5.6 ignores `stop`, the full 1..20 list is returned
+)
 
 # TODO 6: response_format — enforce structured output format
 #  "text" (default) or "json_schema" with a schema definition
 #  Query: "List 3 programming languages with their year of creation"
 #  Try: response_format={"type": "json_schema", "json_schema": {"name": "languages", "strict": True, "schema": {"type": "object", "properties": {"languages": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}, "required": ["name", "year"], "additionalProperties": False}}}, "required": ["languages"], "additionalProperties": False}}}
+run(
+    step=6,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    response_format={"type": "json_schema", "json_schema": {"name": "languages", "strict": True, "schema": {"type": "object", "properties": {"languages": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}, "required": ["name", "year"], "additionalProperties": False}}}, "required": ["languages"], "additionalProperties": False}}},
+)
 
 # TODO 7: frequency_penalty — penalizes tokens based on how often they appeared so far. Range: -2.0 to 2.0, default: 0
 #  ⚠️ Note: Will work for models like gpt-4o
 #  Positive = reduces repetition, negative = encourages repetition
 #  Query: "Write a paragraph about the ocean"
 #  Try: frequency_penalty=0.0 vs frequency_penalty=1.5
+run(
+    step=7,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning_effort="none",
+    frequency_penalty=1.5,  # try 0.0 vs 1.5
+)
 
 # TODO 8: presence_penalty — penalizes tokens based on whether they appeared at all. Range: -2.0 to 2.0, default: 0
 #  ⚠️ Note: Will work for models like gpt-4o
 #  Positive = encourages new topics, negative = stays on topic
 #  Query: "Write a paragraph about the ocean"
 #  Try: presence_penalty=0.0 vs presence_penalty=1.5
+run(
+    step=8,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning_effort="none",
+    presence_penalty=1.5,  # try 0.0 vs 1.5
+)
 
 # TODO 9: seed — attempts deterministic output. Same seed + same input = same output (best effort)
 #  ⚠️ Note: Will work for models like gpt-4o
 #  Query: "Give me a name for a coffee shop"
 #  Try: seed=42 — run twice with the same seed and compare outputs
+run(
+    step=9,
+    client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    seed=42,  # run twice and compare outputs
+)
 
 # TODO 10: reasoning_effort — controls how much thinking the model does. Values: "none", "low", "medium" (default), "high", "xhigh"
 #  Lower effort = faster, cheaper responses; higher = more thorough reasoning
@@ -59,9 +126,9 @@ from commons.constants import OPENAI_TERRA_MODEL
 #  Try: reasoning_effort="low" vs reasoning_effort="high"
 
 run(
+    step=10,
     client=OpenAIChatCompletionsClient(model_name=OPENAI_TERRA_MODEL),
-    print_request=True, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
-
-
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    reasoning_effort="low",  # try "low" vs "high"
 )

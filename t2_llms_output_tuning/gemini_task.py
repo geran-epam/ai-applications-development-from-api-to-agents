@@ -8,20 +8,48 @@ from commons.constants import GEMINI_FLASH_MODEL
 #  Lower = more deterministic, higher = more creative
 #  Query: "Give me a name for a coffee shop"
 #  Try: "temperature": 0.0 vs "temperature": 2.0, compare outputs
+run(
+    step=1,
+    client=GeminiAIClient(GEMINI_FLASH_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    generationConfig={"temperature": 0.0},  # try 0.0 vs 2.0
+)
 
 # TODO 2: topP — nucleus sampling, keeps tokens within cumulative probability. Range: 0.0-1.0, default: 0.95
 #  Lower = fewer token choices, more focused output
 #  Query: "List 5 alternative uses for a paperclip"
 #  Try: "topP": 0.1 vs "topP": 0.95
+run(
+    step=2,
+    client=GeminiAIClient(GEMINI_FLASH_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    generationConfig={"topP": 0.1},  # try 0.1 vs 0.95
+)
 
 # TODO 3: topK — limits token selection to top K candidates. Default: 40
 #  Lower = fewer choices per token, more predictable
 #  Query: "Write a one-sentence story about a robot"
 #  Try: "topK": 1 vs "topK": 64
+run(
+    step=3,
+    client=GeminiAIClient(GEMINI_FLASH_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    generationConfig={"topK": 1},  # try 1 vs 64
+)
 
 # TODO 4: maxOutputTokens — max number of tokens in the response. Required, default: 1024 (set in gemini_client.py)
 #  Query: "Explain quantum computing"
 #  Try: "maxOutputTokens": 50 vs "maxOutputTokens": 2048
+run(
+    step=4,
+    client=GeminiAIClient(GEMINI_FLASH_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    generationConfig={"maxOutputTokens": 50},  # try 50 vs 2048
+)
 
 # TODO 5: responseMimeType + responseSchema — enforce structured output format
 #  responseMimeType: "text/plain" (default), "application/json", "text/x.enum"
@@ -29,16 +57,27 @@ from commons.constants import GEMINI_FLASH_MODEL
 #  Query: "List 3 programming languages with their year of creation"
 #  Try: "responseMimeType": "application/json",
 #       "responseSchema": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}}}
+run(
+    step=5,
+    client=GeminiAIClient(GEMINI_FLASH_MODEL),
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    generationConfig={
+        "responseMimeType": "application/json",
+        "responseSchema": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "year": {"type": "integer"}}}},
+    },
+)
 
-# TODO 7: thinkingConfig — enables extended thinking (chain-of-thought). Requires thinkBudget param
+# TODO 6: thinkingConfig — enables extended thinking (chain-of-thought). Requires thinkBudget param
 #  Model reasons step-by-step before answering
 #  Query: "How many r's are in the word strawberry?"
 #  Try: "thinkingConfig": {"thinkMode": "THINKING_MODE_ENABLED", "thinkBudget": 5000}
 
 run(
+    step=6,
     client=GeminiAIClient(GEMINI_FLASH_MODEL),
-    print_request=True, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
-
-
+    print_request=True,  # Switch to False if you do not want to see the request in console
+    print_only_content=False,  # Switch to True if you want to see only content from response
+    # NOTE: "thinkMode"/"thinkBudget" from the TODO are rejected by the API (400), the real field is "thinkingBudget"
+    generationConfig={"thinkingConfig": {"thinkingBudget": 5000}},
 )

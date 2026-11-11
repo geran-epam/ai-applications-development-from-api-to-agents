@@ -1,0 +1,831 @@
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 1> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "n": 3
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Juniper & Bean",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393294,
+  "id": "gen-1794393294-Qybgm2Dug8XbtZoMwemp",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 8,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000124,
+    "cost_details": {
+      "upstream_inference_completions_cost": 9.6e-05,
+      "upstream_inference_cost": 0.000124,
+      "upstream_inference_prompt_cost": 2.8e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 14,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 22
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 1> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 2> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Why white is white?"
+    }
+  ],
+  "reasoning_effort": "none",
+  "temperature": 0.0
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "White appears white because it reflects or scatters most visible wavelengths of light roughly equally.\n\n- **For surfaces:** A white object reflects red, green, blue, and the other visible colors instead of absorbing them. Your eyes receive a balanced mix, which your brain interprets as white.\n- **For light sources:** White light contains a broad combination of visible wavelengths, such as sunlight or a white LED.\n- **For materials like snow, paper, or clouds:** Their tiny structures scatter incoming light in many directions without strongly favoring one color, producing a white appearance.\n\nA surface can also look white only under suitable lighting: under red light, even white paper looks red because only red light is available to reflect.",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393316,
+  "id": "gen-1794393316-KrRCychGzLYiNPcBrdgU",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 147,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.001786,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001764,
+      "upstream_inference_cost": 0.001786,
+      "upstream_inference_prompt_cost": 2.2e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 11,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 158
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 2> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 3> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 5 alternative uses for a paperclip"
+    }
+  ],
+  "reasoning_effort": "none",
+  "top_p": 0.1
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "1. **Temporary zipper pull** \u2014 Thread it through a broken zipper tab to make the zipper usable again.  \n2. **SIM card tray ejector** \u2014 Straighten one end and use it to press the small eject hole on a phone.  \n3. **Cable organizer** \u2014 Bend it around charging cords or earbuds to keep them from tangling.  \n4. **Bookmark or page holder** \u2014 Clip it onto the page you want to save in a book or notebook.  \n5. **Reset-button tool** \u2014 Use the straightened end to press recessed reset buttons on routers, toys, or small electronics.",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393513,
+  "id": "gen-1794393513-cSfQfLn444PwfrlAxKo7",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 129,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.001578,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001548,
+      "upstream_inference_cost": 0.001578,
+      "upstream_inference_prompt_cost": 3e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 15,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 144
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 3> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 4> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain quantum computing"
+    }
+  ],
+  "max_completion_tokens": 50
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Quantum computing is a form",
+        "reasoning": "**Explaining quantum concepts**\n\nI should provide a clear overview of fundamental quantum concepts. I'll mention qubits and explain superposition, noting its caveat. I also want to touch on entanglement, quantum gates, and interference while discussing measurement. Including examples of quantum algorithms will be useful too. Finally, I should address the limits and importance of error correction. I'll keep it straightforward without overcomplicating things.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "summary": "**Explaining quantum concepts**\n\nI should provide a clear overview of fundamental quantum concepts. I'll mention qubits and explain superposition, noting its caveat. I also want to touch on entanglement, quantum gates, and interference while discussing measurement. Including examples of quantum algorithms will be useful too. Finally, I should address the limits and importance of error correction. I'll keep it straightforward without overcomplicating things.",
+            "type": "reasoning.summary"
+          },
+          {
+            "data": "gAAAAABq9EW8IYemCQypZHZNKj9k5jTNTroXmf7Pv7XA8T-bJJcBJiwmPLA0J2u0iE9P5YVkyhNq5GEm-AfU_OWlJlS527tbgtVeEX50P27-44jCB1CdADyjK1rP1wy7glZHFwsK8cyzdHAkBfAF_HMJjKOsi7tHz12-oR_7BXI_5zYDGGRNcoS8IH0YIDfq05dAY7ztZlZcC1EUL9ikqp5IC3CnJrXN-Me-B5Cj9ETiHs7TL6RASFp5Xxn5ZiFFjaEkGvNLkttG5fmzwx86jARcisTokD0xrHCsof645l5UmEuLuV9u5mowbhBzztmwP1-_0bNO_HTisbqsTDxEfEjL5XZa4dW9XuFqAVJku82iEnzI-2Yw3L3ZqFzOql6-NtEOHX_hmfe7DuwKC5Qj4yTPTWJ016gFGw_glmVy4TuFLdy6hQ3gzt0J8FqjDiuK4tZbVtqezZQ9t5yB1zzZDWQxTu6bWpGz-oqTNSq77sdTwnwTtx4JrajAdtAZd55S3aD5mcMEntt4AjYOR5AaMIFztRTujyR4WQbORVq_RCcSQ3Xop8x06SWN8GVyzU6F1XYTlnyHTqH7emzMrZZXskZCNs0z6v27EA4s8p582yj4UtTNBkoJAPrXlqVlMA23x_x7JLsa4yYDIb1ZlRhquDu3gLkZb-x_IEfU8lgV9lWRAIuDJ6Yl1xtgT7iYa9on6fuqeYo-BeIKRoAOkSU4VDAiDXvA3srNoZC7mDIcY2z69K5cQGfEIstyWcrOByP0NxJZ3yw-sFwx8vuTozmW2jriU18PqueTFtnsk5kp3QQV5c_ifJJz4JBWLsFEZMEJOFPNEaDUZ2Cmqiea3mtTeIv7GSk-tznN-v0Im4AJlm9SzB7WBneNuw9DVPHuwEWmtQqX_MnkM9WsoGlbfVsHgmNMZWp_7-n6L_BVjLqWEMPt6G7Lunz8H5n8EVQMlAmO3UEUwTn6mKdf_iQ6zwYqRnvXwntCbHKAV2VdT4QSXkhMw1E0wxkfCtQpnXYOjJW3Ino9rw5yDxEryaXS83u2KXYRawq9J-S5tGmxRWvHar11ZEwMWZOWVG2FSBJVl2xslOnYqUGhagDdjsp7OPtJgMJUrkG21jMGXLrxaUEXm-Ezg4UXzKkw41JNmV-cLbW5j3UEykw-gHkWEmMm2t1xaGPwFDDGlh0UgibuTiNWfRLFQVBLJrQziqtnmkG9fMLavbCqiDxi7AlwJd08HiahK8oG2I0e-WxXeebuRau35yGIiJYUOG2iDBBEkOBJ8t3-QdnDhmMks_z7uGbxt1QhJUFw7hgGHsiSkb57yen55jFuHYO3h8t8JBeChmttVnODk7KSAdqnIPwDw4PfQ8NpOsfk6Z_H7O-Dz_1AYAg6wYerMkixMBkWxRJPHDCoToXnR-shJc6zXKoXvQS6L5dx0BFWGs9ZENzrZTlvHdqkd3Qc5gZd79_3SGfO2cSClIgfoCYDGJw05Bovp8bEVQiR7mcNxiRGoUhXzauGsolSFeNrEqVJ_uLNLFp_d8MkmKKikm5cKVjpM72U4D2hn5YchQ8GH49qA75E5tNdEIgTkdKOMFQyYNLyjRsRXDgbyNgUonL0CxJgN4N7F9wARXG_e0np2yr_jXgdh_vap-7LECC_B5Bkp5s3Ua4qi-kk2I4jV-HW5dLF1yZNr8OIZjhGQgSQBnD2KiY0wqecVKJZSDfXTxrjHwsj2r1IDwKKsPzHMOi2Z1L2puWOWXTdDzQ35otH3dTBYMTOTiiss19JAhyVXufv77orzgipDz_1lwlgHRd57n5wIZcUDrWg4v3cwdHheOsrXvBnjhcFmDtKtmwLbKrQ4C-_YOWYBGcAGDrpH8_HTrY8MkJlHraaVihK7GBs-VfyhAq54yoyP4zHThffNIw5DbaZqLAhE00bLGEZFwWhSGxznMFSvjkliIc127HwcJP-I6citsTcf321F7L00l1hoAN0tD3qN0nWa8CHs-UF4qeQGvD0MXF36rNHODryR32z3jYs27tQtgE-TANyilK3OiqPpSv276oi7iSZh1GgNs_jW8BA-bSgpKrQMp0JgOFYQwtlHoDaevx2uI9-YCt8mjfimfhNhMhYVnH-154ng0I4vLqFXQzTS1_jUD7JSkj2GdnuWVUdzzikulSrN9Hj2tXNP3PPDq5HSHHquyPrCTeMNR6deIAPEypgS-zMP3D_Om49rLKVR7fTv2M3H6yTLpbQgWS9bWNal44vbSfpeMd8OXD_W6Hj85huKHSjNw6VSa7nPQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtdGVycmEtMjAyNjA3MDl8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_04a876f78f86592b016af445ba841487d1b528855be4ba15d1",
+            "index": 1,
+            "type": "reasoning.encrypted"
+          }
+        ],
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "max_output_tokens"
+    }
+  ],
+  "created": 1794393529,
+  "id": "gen-1794393529-H16Czq4kfl7O9lWa4NBR",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 50,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 40
+    },
+    "cost": 0.000618,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.0006,
+      "upstream_inference_cost": 0.000618,
+      "upstream_inference_prompt_cost": 1.8e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 9,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 59
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 4> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 5> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Count from 1 to 20, comma separated"
+    }
+  ],
+  "stop": [
+    "5"
+  ]
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393557,
+  "id": "gen-1794393557-mj4ll04t18a2GEYPsvxH",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 62,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000776,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000744,
+      "upstream_inference_cost": 0.000776,
+      "upstream_inference_prompt_cost": 3.2e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 16,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 78
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 5> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 6> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "List 3 programming languages with their year of creation"
+    }
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "languages",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "year"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "languages"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"languages\":[{\"name\":\"Fortran\",\"year\":1957},{\"name\":\"C\",\"year\":1972},{\"name\":\"Python\",\"year\":1991}]}",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393572,
+  "id": "gen-1794393572-ujTGC4WmDCpiZjEjhp9X",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 40,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000598,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.00048,
+      "upstream_inference_cost": 0.000598,
+      "upstream_inference_prompt_cost": 0.000118
+    },
+    "is_byok": false,
+    "prompt_tokens": 59,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 99
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 6> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 7> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Write a paragraph about the ocean"
+    }
+  ],
+  "reasoning_effort": "none",
+  "frequency_penalty": 1.5
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The ocean is a vast, interconnected expanse of saltwater that covers more than two-thirds of Earth\u2019s surface and plays a vital role in sustaining life. It regulates global climate by absorbing heat and carbon dioxide, produces much of the oxygen we breathe through tiny marine plants, and provides habitats for countless species ranging from microscopic plankton to giant whales. Its waves, currents, reefs, and deep trenches create an environment of remarkable beauty and mystery. Protecting the ocean from pollution, overfishing, and climate change is essential for the health of both marine ecosystems and human communities around the world.",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393594,
+  "id": "gen-1794393594-3qtWwm7HUTwx9zA92AoD",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 122,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.001488,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001464,
+      "upstream_inference_cost": 0.001488,
+      "upstream_inference_prompt_cost": 2.4e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 12,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 134
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 7> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 8> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Write a paragraph about the ocean"
+    }
+  ],
+  "reasoning_effort": "none",
+  "presence_penalty": 1.5
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The ocean is a vast, dynamic world that covers most of Earth\u2019s surface and plays a vital role in sustaining life. Its waters regulate the planet\u2019s climate, produce much of the oxygen we breathe, and provide habitats for countless species, from tiny plankton to enormous whales. Waves, currents, and tides constantly shape coastlines and transport heat around the globe. Although the ocean can seem endless and powerful, it is vulnerable to pollution, overfishing, and climate change, making its protection essential for the health of both marine ecosystems and human communities.",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393623,
+  "id": "gen-1794393623-KzYOxjLdQANNDbP8YnM6",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 114,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.001392,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.001368,
+      "upstream_inference_cost": 0.001392,
+      "upstream_inference_prompt_cost": 2.4e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 12,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 126
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 8> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 9> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "seed": 42
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Ember & Bean",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393655,
+  "id": "gen-1794393655-HNfNjaJ6Wdtlha5yTze6",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 8,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000124,
+    "cost_details": {
+      "upstream_inference_completions_cost": 9.6e-05,
+      "upstream_inference_cost": 0.000124,
+      "upstream_inference_prompt_cost": 2.8e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 14,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 22
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 9> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    },
+    {
+      "role": "assistant",
+      "content": "Ember & Bean"
+    },
+    {
+      "role": "user",
+      "content": "Give me a name for a coffee shop"
+    }
+  ],
+  "seed": 42
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Cedar Cup Coffee",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393658,
+  "id": "gen-1794393658-htdJpFwm8gbBJrW7UjmH",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 8,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000168,
+    "cost_details": {
+      "upstream_inference_completions_cost": 9.6e-05,
+      "upstream_inference_cost": 0.000168,
+      "upstream_inference_prompt_cost": 7.2e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 36,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 44
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 9> Exiting the chat. Goodbye!
+Type your question or 'exit' to quit.
+OpenAIChatCompletionsClient - TODO 10> AI:
+
+================================================== REQUEST ==================================================
+🔗 Endpoint: https://openrouter.ai/api/v1/chat/completions
+
+📋 Headers:
+  Authorization: Bearer s...5adb
+  Content-Type: application/json
+
+📝 Request Body:
+{
+  "model": "gpt-5.6-terra",
+  "messages": [
+    {
+      "role": "user",
+      "content": "How many r's are in the word strawberry?"
+    }
+  ],
+  "reasoning_effort": "low"
+}
+================================================== RESPONSE ==================================================
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "There are 3 r\u2019s in \u201cstrawberry.\u201d",
+        "reasoning": null,
+        "refusal": null,
+        "role": "assistant"
+      },
+      "native_finish_reason": "completed"
+    }
+  ],
+  "created": 1794393680,
+  "id": "gen-1794393680-mNvFYucYHiUhLouR5CuU",
+  "model": "openai/gpt-5.6-terra",
+  "object": "chat.completion",
+  "provider": "OpenAI",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 16,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "cost": 0.000224,
+    "cost_details": {
+      "upstream_inference_completions_cost": 0.000192,
+      "upstream_inference_cost": 0.000224,
+      "upstream_inference_prompt_cost": 3.2e-05
+    },
+    "is_byok": false,
+    "prompt_tokens": 16,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "total_tokens": 32
+  }
+}
+=============================================================================================================
+OpenAIChatCompletionsClient - TODO 10> Exiting the chat. Goodbye!
