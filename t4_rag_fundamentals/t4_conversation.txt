@@ -1,0 +1,284 @@
+/home/geran/projects/ai-tasks/t4_rag_fundamentals/app.py:3: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.document_loaders import TextLoader
+🔄 Initializing vector store...
+📂 Loading existing FAISS index...
+🎯 Microwave Manual RAG Assistant. Ask a question about the microwave (type 'exit' to quit).
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+  - relevance score: 0.5121
+    '2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.\n3. Press START/QUICK STA'...
+  - relevance score: 0.4043
+    '2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.\n3. Press START/QUICK STA'...
+  - relevance score: 0.3954
+    '2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.\n3. Press START/QUICK STA'...
+  - relevance score: 0.3355
+    'Combination 2: 40% of time for microwave cooking, 15% time the oven will stop working and\n45% for gr'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+COMBINATION
+Combination 1: 30% of time for microwave cooking, 55% time for grill cooking and 15% time
+the oven will stop working in one cycle. Use for ﬁsh, potatoes or au gratin.
+
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+Press POWER/CLOCK button to select power level:
+Press POWER/CLOCK
+Once
+Twice
+3 times
+4 times
+5 times
+6 times
+
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+NOTE: During cooking, you can press GRILL/COMBI. button to check the combination
+power level.
+DISINFECT FUNCTION
+
+Combination 2: 40% of time for microwave cooking, 15% time the oven will stop working and
+45% for grill cooking in one cycle. Use for pudding, omelets, baked potatoes and poultry.
+1. In standby mode, press GRILL/COMBI. button 2 or 3 times to select "Co-1" or "Co-2".
+
+
+##USER QUESTION:
+What is the maximum cooking time that can be set on microwave?
+
+🤖 Answer:
+The maximum cooking time is 95 minutes.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+  - relevance score: 0.5826
+    '2. Turn MENU/TIME dial to set hour digit.\n3. Press POWER/CLOCK or START/QUICK START button once.\n4. '...
+  - relevance score: 0.4877
+    '2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.\n3. Press START/QUICK STA'...
+  - relevance score: 0.4826
+    'CONTROL PANEL\nDISPLAY\nCooking time, power, indicators and clock\ntime are displayed.\nPOWER/CLOCK\nPres'...
+  - relevance score: 0.4316
+    '2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.\n3. Press START/QUICK STA'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+2. Turn MENU/TIME dial to set hour digit.
+3. Press POWER/CLOCK or START/QUICK START button once.
+4. Turn MENU/TIME dial to set minute digit.
+5. Press POWER/CLOCK or START/QUICK START button to conﬁrm.
+MICROWAVE COOKING
+1. In standby mode, press POWER/CLOCK repeatedly to select cooking power level.
+
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+Press POWER/CLOCK button to select power level:
+Press POWER/CLOCK
+Once
+Twice
+3 times
+4 times
+5 times
+6 times
+
+CONTROL PANEL
+DISPLAY
+Cooking time, power, indicators and clock
+time are displayed.
+POWER/CLOCK
+Press to select microwave power level.
+Use to set clock time.
+GRILL/COMBI.
+Press to set grill cooking program.
+Press to set microwave and grill combination
+cooking program.
+MENU/TIME (dial)
+
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+COMBINATION
+Combination 1: 30% of time for microwave cooking, 55% time for grill cooking and 15% time
+the oven will stop working in one cycle. Use for ﬁsh, potatoes or au gratin.
+
+
+##USER QUESTION:
+What are the steps to set the clock time on the microwave?
+
+🤖 Answer:
+To set the clock time:
+
+1. Turn the MENU/TIME dial to set the hour digit.  
+2. Press POWER/CLOCK or START/QUICK START once.  
+3. Turn the MENU/TIME dial to set the minute digit.  
+4. Press POWER/CLOCK or START/QUICK START to confirm.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+  - relevance score: 0.5617
+    'ECO FUNCTION\nTo set:\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\nd'...
+  - relevance score: 0.3701
+    'EXPRESS COOKING\nUse this feature to program the oven to microwave food at 100% power conveniently. I'...
+  - relevance score: 0.3653
+    'CONTROL PANEL\nDISPLAY\nCooking time, power, indicators and clock\ntime are displayed.\nPOWER/CLOCK\nPres'...
+  - relevance score: 0.3531
+    'DEODORIZE FUNCTION\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\ndis'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+ECO FUNCTION
+To set:
+1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the
+disinfection mode 1 code "dIS1". Then turn MENU/TIME dial until the display shows the
+power saving mode code ECO.
+2. Press START/QUICK START button to conﬁrm.
+
+EXPRESS COOKING
+Use this feature to program the oven to microwave food at 100% power conveniently. In
+standby mode, press START/QUICK START button repeatedly to set cooking time (each
+press to increase 30 seconds, and up to 10 minutes), the oven starts working automatically at full power.
+GRILL
+
+CONTROL PANEL
+DISPLAY
+Cooking time, power, indicators and clock
+time are displayed.
+POWER/CLOCK
+Press to select microwave power level.
+Use to set clock time.
+GRILL/COMBI.
+Press to set grill cooking program.
+Press to set microwave and grill combination
+cooking program.
+MENU/TIME (dial)
+
+DEODORIZE FUNCTION
+1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the
+disinfection mode 1 code "dIS1". Then turn MENU/TIME dial until the display shows the
+deodorization mode code dEo.
+2. Press START/QUICK START button to conﬁrm.
+
+
+##USER QUESTION:
+What is the ECO function on this microwave and how do you activate it?
+
+🤖 Answer:
+The ECO function is the power saving mode.
+
+To activate it:
+1. In standby mode, press **DISINFECT/DEODORIZE/ECO** once. The display shows “dIS1”.
+2. Turn the **MENU/TIME** dial until “ECO” is displayed.
+3. Press **START/QUICK START** to confirm.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+  - relevance score: 0.4230
+    '7. To reduce the risk of ﬁre in the oven cavity:\nWhen heating food in plastic or paper container, ke'...
+  - relevance score: 0.4165
+    'If smoke is observed, switch off or unplug the appliance and keep the door closed in\norder to stiﬂe '...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+7. To reduce the risk of ﬁre in the oven cavity:
+When heating food in plastic or paper container, keep an eye on the oven due to the
+possibility of ignition.
+Remove wire twist-ties from paper or plastic bags before placing bag in oven.
+
+If smoke is observed, switch off or unplug the appliance and keep the door closed in
+order to stiﬂe any ﬂames.
+Do not use the cavity for storage purposes. Do not leave paper products, cooking
+utensils, or food in the cavity when not in use.
+
+
+##USER QUESTION:
+What should you do if food in plastic or paper containers starts smoking during heating?
+
+🤖 Answer:
+Switch off or unplug the appliance and keep the door closed to stifle any flames.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+  - relevance score: 0.4779
+    'sure to replace it in the proper position.\n10. Remove odors from your oven by combining a cup of wat'...
+  - relevance score: 0.3845
+    'turning on.\n7. If steam accumulates inside or around the outside of the oven door, wipe with a soft\n'...
+  - relevance score: 0.3634
+    '1. Clean door and sealing surface of the oven.\n2. Reorient the receiving antenna of radio or televis'...
+  - relevance score: 0.3464
+    'RADIO INTERFERENCE\nOperation of the microwave oven can cause interference to your radio, TV, or simi'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+sure to replace it in the proper position.
+10. Remove odors from your oven by combining a cup of water with the juice and skin of
+one lemon in a microwaveable bowl. Microwave for 5 minutes. Wipe thoroughly and
+dry with a soft cloth.
+
+turning on.
+7. If steam accumulates inside or around the outside of the oven door, wipe with a soft
+cloth. This may occur when the microwave oven is operated under high humidity
+condition. And it is normal.
+8. It is occasionally necessary to remove the glass tray for cleaning. Wash the tray in
+
+1. Clean door and sealing surface of the oven.
+2. Reorient the receiving antenna of radio or television.
+3. Relocate the microwave oven with respect to the receiver.
+4. Move the microwave oven away from the receiver.
+
+RADIO INTERFERENCE
+Operation of the microwave oven can cause interference to your radio, TV, or similar
+equipment. When there is interference, it may be reduced or eliminated by taking the
+following measures:
+1. Clean door and sealing surface of the oven.
+
+
+##USER QUESTION:
+What is the recommended procedure for removing odors from the microwave oven?
+
+🤖 Answer:
+Combine a cup of water with the juice and skin of one lemon in a microwaveable bowl. Microwave for 5 minutes, then wipe thoroughly and dry with a soft cloth.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+/home/geran/projects/ai-tasks/t4_rag_fundamentals/app.py:116: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='f6f6ce2f-4ad1-4f77-b017-9682a2a21d73', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='power level.\nDISINFECT FUNCTION\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\ndisinfection mode 1 code "dIS1". Then you can select the disinfection mode 2, turn\nMENU/TIME dial until the display shows "dIS2".\n2. Press START/QUICK START button to conﬁrm.'), np.float32(-0.11577475)), (Document(id='9927b171-5419-4c70-b19b-5c96e2c382aa', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='ECO FUNCTION\nTo set:\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\ndisinfection mode 1 code "dIS1". Then turn MENU/TIME dial until the display shows the\npower saving mode code ECO.\n2. Press START/QUICK START button to conﬁrm.'), np.float32(-0.11675203)), (Document(id='0bf408bb-b717-4cfe-838a-7067570aa40d', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='DEODORIZE FUNCTION\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\ndisinfection mode 1 code "dIS1". Then turn MENU/TIME dial until the display shows the\ndeodorization mode code dEo.\n2. Press START/QUICK START button to conﬁrm.'), np.float32(-0.119657636)), (Document(id='df9b1c9a-3471-49e1-bb68-0d38c27fb70b', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='cooking program.\nMENU/TIME (dial)\nTurn the dial to set time.\nTurn the dial to select auto cooking menus.\nSTART/QUICK START (the dial)\nPress the dial to start cooking and defrosting\nprograms.\nSimply press the dial a number of times to\nset cooking time and cook immediately at full\npower level.'), np.float32(-0.13316941))]
+  results = self.vectorstore.similarity_search_with_relevance_scores(
+No relevant docs were retrieved using the relevance score threshold 0.3
+  (no relevant chunks found)
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+
+
+
+##USER QUESTION:
+What do you know about the DIALX Community?
+
+🤖 Answer:
+I can only answer questions covered by the microwave manual, and I have no information about the DIALX Community.
+
+
+> 
+🔍 Retrieving context (k=4, score_threshold=0.3)...
+/home/geran/projects/ai-tasks/t4_rag_fundamentals/app.py:116: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='2d0ade04-9d95-44ca-9ce3-1eb0e08f0f15', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='by burning the lubricating oil. This phenomenon will disappear after a period of using.'), np.float32(-0.25320065)), (Document(id='0bf408bb-b717-4cfe-838a-7067570aa40d', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='DEODORIZE FUNCTION\n1. In standby mode, press DISINFECT/DEODORIZE/ECO once. The display shows the\ndisinfection mode 1 code "dIS1". Then turn MENU/TIME dial until the display shows the\ndeodorization mode code dEo.\n2. Press START/QUICK START button to conﬁrm.'), np.float32(-0.26352835)), (Document(id='013892d9-a6f0-4726-a2cd-ea267fd68f91', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='utensils, or food in the cavity when not in use.\nThe microwave oven is intended for heating food and beverages. Drying of clothing\nand heating of warming pads, slippers, sponges, damp cloth and similar may lead to\nrisk of injury, ignition or ﬁre.'), np.float32(-0.2689612)), (Document(id='994b88a5-f41d-4119-964d-c8811f98c433', metadata={'source': '/home/geran/projects/ai-tasks/t4_rag_fundamentals/microwave_manual.txt'}, page_content='designed to heat, cook or dry food. It is not designed for industrial or laboratory use.\n3. Do not operate the oven when empty.\n4. Do not operate this appliance if it has a damaged cord or plug, if it is not working'), np.float32(-0.27343094))]
+  results = self.vectorstore.similarity_search_with_relevance_scores(
+No relevant docs were retrieved using the relevance score threshold 0.3
+  (no relevant chunks found)
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+
+
+
+##USER QUESTION:
+What do you think about the dinosaur era? Why did they die?
+
+🤖 Answer:
+I can only answer questions covered by the microwave manual, and I have no information about the dinosaur era.
+
+
+> Bye!
