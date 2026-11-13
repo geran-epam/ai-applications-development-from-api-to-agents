@@ -1,0 +1,328 @@
+Load context into DB? (y/n): n
+🎯 Microwave RAG Assistant. Ask a question (type 'exit' to quit).
+
+> What is the maximum cooking time that can be set on microwave?
+
+🔍 Retrieving context...
+  - distance=0.3670: 'y mode, press GRILL/COMBI. button once.\n2. Turn MENU/TIME dial to set cooking ti'...
+  - distance=0.4128: 'wer power level)\n1. Input the ﬁrst microwave cooking program. Do not press START'...
+  - distance=0.4137: 'tedly to select cooking power level.\n2. Turn MENU/TIME dial to set cooking time.'...
+  - distance=0.4272: ' Turn MENU/TIME dial to set hour digit.\n3. Press POWER/CLOCK or START/QUICK STAR'...
+  - distance=0.4468: 't of time indicated and add more as\nneeded. Foods severely overcooked can smoke '...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+y mode, press GRILL/COMBI. button once.
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+COMBINATION
+Combination 1: 30% of time for microwave cooking, 55% time for grill cooking and 15% time
+the oven will stop working in one cyc
+
+wer power level)
+1. Input the ﬁrst microwave cooking program. Do not press START/QUICK START.
+3. Input the second microwave cooking program.
+4. Press START/QUICK START button to start.
+NOTE: Auto cook menus, auto defrost, disinfection function, deodorization function and
+power saving function cannot
+
+tedly to select cooking power level.
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+Press POWER/CLOCK button to select power level:
+Press POWER/CLOCK
+Once
+Twice
+3 times
+4 times
+5 times
+6 times
+
+Power (Display)
+100% (100)
+90% (
+
+ Turn MENU/TIME dial to set hour digit.
+3. Press POWER/CLOCK or START/QUICK START button once.
+4. Turn MENU/TIME dial to set minute digit.
+5. Press POWER/CLOCK or START/QUICK START button to conﬁrm.
+MICROWAVE COOKING
+1. In standby mode, press POWER/CLOCK repeatedly to select cooking power level.
+2. 
+
+t of time indicated and add more as
+needed. Foods severely overcooked can smoke or ignite.
+3. Cover foods while cooking. Covers prevent spattering and help foods to cook evenly.
+4. Turn foods over once during microwave cooking to speed cooking of such foods as
+chicken and hamburgers. Large items lik
+
+
+##USER QUESTION:
+What is the maximum cooking time that can be set on microwave?
+
+🤖 Answer:
+The longest cooking time that can be set is 95 minutes.
+
+> What are the steps to set the clock time on the microwave?
+
+🔍 Retrieving context...
+  - distance=0.2681: ' Turn MENU/TIME dial to set hour digit.\n3. Press POWER/CLOCK or START/QUICK STAR'...
+  - distance=0.3185: 'ing time, power, indicators and clock\ntime are displayed.\nPOWER/CLOCK\nPress to s'...
+  - distance=0.3575: ' by pressing POWER/CLOCK button.\n\nEXPRESS COOKING\nUse this feature to program th'...
+  - distance=0.3587: 'Turn the dial to set time.\nTurn the dial to select auto cooking menus.\nSTART/QUI'...
+  - distance=0.3808: 'tedly to select cooking power level.\n2. Turn MENU/TIME dial to set cooking time.'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+ Turn MENU/TIME dial to set hour digit.
+3. Press POWER/CLOCK or START/QUICK START button once.
+4. Turn MENU/TIME dial to set minute digit.
+5. Press POWER/CLOCK or START/QUICK START button to conﬁrm.
+MICROWAVE COOKING
+1. In standby mode, press POWER/CLOCK repeatedly to select cooking power level.
+2. 
+
+ing time, power, indicators and clock
+time are displayed.
+POWER/CLOCK
+Press to select microwave power level.
+Use to set clock time.
+GRILL/COMBI.
+Press to set grill cooking program.
+Press to set microwave and grill combination
+cooking program.
+MENU/TIME (dial)
+Turn the dial to set time.
+Turn the dial
+
+ by pressing POWER/CLOCK button.
+
+EXPRESS COOKING
+Use this feature to program the oven to microwave food at 100% power conveniently. In
+standby mode, press START/QUICK START button repeatedly to set cooking time (each
+press to increase 30 seconds, and up to 10 minutes), the oven starts working autom
+
+Turn the dial to set time.
+Turn the dial to select auto cooking menus.
+START/QUICK START (the dial)
+Press the dial to start cooking and defrosting
+programs.
+Simply press the dial a number of times to
+set cooking time and cook immediately at full
+power level.
+DISINFECT/DEODORIZE/ECO
+Use to set disinf
+
+tedly to select cooking power level.
+2. Turn MENU/TIME dial to set cooking time. The longest time is 95 minutes.
+3. Press START/QUICK START button to conﬁrm.
+Press POWER/CLOCK button to select power level:
+Press POWER/CLOCK
+Once
+Twice
+3 times
+4 times
+5 times
+6 times
+
+Power (Display)
+100% (100)
+90% (
+
+
+##USER QUESTION:
+What are the steps to set the clock time on the microwave?
+
+🤖 Answer:
+1. Turn the MENU/TIME dial to set the hour digit.  
+2. Press POWER/CLOCK or START/QUICK START once.  
+3. Turn the MENU/TIME dial to set the minute digit.  
+4. Press POWER/CLOCK or START/QUICK START to confirm.
+
+> What is the ECO function on this microwave and how do you activate it?
+
+🔍 Retrieving context...
+  - distance=0.3640: 'ntil the display shows the\npower saving mode code ECO.\n2. Press START/QUICK STAR'...
+  - distance=0.3786: 'wer power level)\n1. Input the ﬁrst microwave cooking program. Do not press START'...
+  - distance=0.3892: 'Turn the dial to set time.\nTurn the dial to select auto cooking menus.\nSTART/QUI'...
+  - distance=0.4004: ' by pressing POWER/CLOCK button.\n\nEXPRESS COOKING\nUse this feature to program th'...
+  - distance=0.4018: 'ISINFECT/DEODORIZE/ECO\nUse to set disinfect, deodorize and power\nsaving function'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+ntil the display shows the
+power saving mode code ECO.
+2. Press START/QUICK START button to conﬁrm.
+To cancel: In power saving mode, the power saving function can be cancelled by
+opening or closing the oven door, pressing any button or turning MENU/TIME dial once,
+and then the oven will return to st
+
+wer power level)
+1. Input the ﬁrst microwave cooking program. Do not press START/QUICK START.
+3. Input the second microwave cooking program.
+4. Press START/QUICK START button to start.
+NOTE: Auto cook menus, auto defrost, disinfection function, deodorization function and
+power saving function cannot
+
+Turn the dial to set time.
+Turn the dial to select auto cooking menus.
+START/QUICK START (the dial)
+Press the dial to start cooking and defrosting
+programs.
+Simply press the dial a number of times to
+set cooking time and cook immediately at full
+power level.
+DISINFECT/DEODORIZE/ECO
+Use to set disinf
+
+ by pressing POWER/CLOCK button.
+
+EXPRESS COOKING
+Use this feature to program the oven to microwave food at 100% power conveniently. In
+standby mode, press START/QUICK START button repeatedly to set cooking time (each
+press to increase 30 seconds, and up to 10 minutes), the oven starts working autom
+
+ISINFECT/DEODORIZE/ECO
+Use to set disinfect, deodorize and power
+saving functions.
+STOP/CANCEL
+Press once to temporarily stop cooking, or
+twice to cancel cooking altogether.
+It is also used to set child lock.
+
+
+OPERATION INSTRUCTIONS
+When the oven is plugged in, a beep will sound and the display wil
+
+
+##USER QUESTION:
+What is the ECO function on this microwave and how do you activate it?
+
+🤖 Answer:
+The ECO function is the microwave’s power-saving mode.
+
+To activate it:
+1. Press the DISINFECT/DEODORIZE/ECO button until the display shows the power-saving mode code “ECO.”
+2. Press START/QUICK START to confirm.
+
+To cancel power-saving mode, open or close the oven door, press any button, or turn the MENU/TIME dial once.
+
+> What should you do if food in plastic or paper containers starts smoking during heating?
+
+🔍 Retrieving context...
+  - distance=0.3505: 'paper or plastic bags before placing bag in oven.\nIf smoke is observed, switch o'...
+  - distance=0.3869: 'ly use the oven under adult supervision due to the temperatures generated\n7. To '...
+  - distance=0.4779: 'od must not be heated in sealed containers since they\nare liable to explode.\n9. '...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+paper or plastic bags before placing bag in oven.
+If smoke is observed, switch off or unplug the appliance and keep the door closed in
+order to stiﬂe any ﬂames.
+Do not use the cavity for storage purposes. Do not leave paper products, cooking
+utensils, or food in the cavity when not in use.
+The micro
+
+ly use the oven under adult supervision due to the temperatures generated
+7. To reduce the risk of ﬁre in the oven cavity:
+When heating food in plastic or paper container, keep an eye on the oven due to the
+possibility of ignition.
+Remove wire twist-ties from paper or plastic bags before placing bag
+
+od must not be heated in sealed containers since they
+are liable to explode.
+9. Microwave heating of beverage can result in delayed eruptive boiling, therefore care
+has to be taken when handle the container.
+10. Do not fry food in the oven. Hot oil can damage oven parts and utensils and even
+result 
+
+
+##USER QUESTION:
+What should you do if food in plastic or paper containers starts smoking during heating?
+
+🤖 Answer:
+Switch off or unplug the microwave, and keep the door closed to stifle any flames.
+
+> What is the recommended procedure for removing odors from the microwave oven?
+
+🔍 Retrieving context...
+  - distance=0.3883: 'a microwaveable bowl. Microwave for 5 minutes. Wipe thoroughly and\ndry with a so'...
+  - distance=0.3953: ' detergent. The roller ring may be\nwashed in mild, soapy water or in a dishwashe'...
+  - distance=0.4405: 'eep the inside of the oven clean. When food splatters or spilled liquids adhere '...
+  - distance=0.4430: 'is interference, it may be reduced or eliminated by taking the\nfollowing measure'...
+  - distance=0.4449: 'oven door open to prevent oven from accidentally\nturning on.\n7. If steam accumul'...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+a microwaveable bowl. Microwave for 5 minutes. Wipe thoroughly and
+dry with a soft cloth.
+11. If the light bulb burns out, please contact customer service to have it replaced.
+12. The oven should be cleaned regularly and any food deposits should be removed.
+Failure to maintain the oven in a clean co
+
+ detergent. The roller ring may be
+washed in mild, soapy water or in a dishwasher. When removing the roller ring, be
+sure to replace it in the proper position.
+10. Remove odors from your oven by combining a cup of water with the juice and skin of
+one lemon in a microwaveable bowl. Microwave for 5 mi
+
+eep the inside of the oven clean. When food splatters or spilled liquids adhere to
+oven walls, wipe with a damp cloth. Mild detergents may be used if the oven gets very
+dirty. Avoid using spray or other harsh cleaners. They may stain, streak or dull the
+door surface.
+3. The outside of the oven shoul
+
+is interference, it may be reduced or eliminated by taking the
+following measures:
+1. Clean door and sealing surface of the oven.
+2. Reorient the receiving antenna of radio or television.
+3. Relocate the microwave oven with respect to the receiver.
+4. Move the microwave oven away from the receiver.
+
+
+oven door open to prevent oven from accidentally
+turning on.
+7. If steam accumulates inside or around the outside of the oven door, wipe with a soft
+cloth. This may occur when the microwave oven is operated under high humidity
+condition. And it is normal.
+8. It is occasionally necessary to remove th
+
+
+##USER QUESTION:
+What is the recommended procedure for removing odors from the microwave oven?
+
+🤖 Answer:
+Combine a cup of water with the juice and skin of one lemon in a microwaveable bowl. Microwave for 5 minutes, then wipe thoroughly and dry with a soft cloth.
+
+> What do you know about the DIALX Community?
+
+🔍 Retrieving context...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+No relevant context found.
+
+
+##USER QUESTION:
+What do you know about the DIALX Community?
+
+🤖 Answer:
+I can only answer questions covered by the microwave manual, and I have no information about the DIALX Community.
+
+> What do you think about the dinosaur era? Why did they die?
+
+🔍 Retrieving context...
+
+🔗 Augmented prompt:
+##RAG CONTEXT:
+No relevant context found.
+
+
+##USER QUESTION:
+What do you think about the dinosaur era? Why did they die?
+
+🤖 Answer:
+I can only answer questions covered by the microwave manual, and I have no information about the dinosaur era or why dinosaurs died.
+
+> exit
+Bye!
