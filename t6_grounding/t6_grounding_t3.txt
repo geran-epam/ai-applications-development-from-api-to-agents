@@ -1,0 +1,313 @@
+### INPUT
+I need people who love to go to mountains
+Who likes cooking and baking?
+People who enjoy playing music
+exit
+### OUTPUT
+🔎 Loading all users...
+Get 1001 users successfully
+✅ Vectorstore is ready (1001 users).
+Query samples:
+ - I need people who love to go to mountains
+ - Who likes cooking and baking?
+> Get 1001 users successfully
+🔄 Vectorstore synced: +0 new, -0 deleted users
+Retrieving context...
+Retrieved (Score: 0.253): 956 "id: 956\nabout_me: I'm someone who values skiing and is fascinated by philosophy."
+Retrieved (Score: 0.244): 820 "id: 820\nabout_me: Life's beauty lies in hiking, nature, and embracing being coll"
+Retrieved (Score: 0.222): 322 "id: 322\nabout_me: I'm passionate about rock climbing and constantly exploring fi"
+Retrieved (Score: 0.209): 575 'id: 575\nabout_me: What defines my journey? A combination of skiing, health, and '
+Retrieved (Score: 0.205): 171 "id: 171\nabout_me: I'm passionate about rock climbing and find myself constantly "
+====================================================================================================
+
+LLM grouping (IDs only): {"hobbies":[{"hobby":"skiing","user_ids":[956,322,575]},{"hobby":"hiking","user_ids":[956,820,575,171]},{"hobby":"rock climbing","user_ids":[820,322,171]}]}
+
+{
+  "skiing": [
+    {
+      "id": 956,
+      "name": "Perry",
+      "surname": "Brewer",
+      "email": "perry.brewer596@gmail.com",
+      "phone": "+1-454-600-8567x206",
+      "date_of_birth": "1988-12-04",
+      "address": {
+        "country": "Somalia",
+        "city": "Stevenmouth",
+        "street": "4689 Sawyer Ports",
+        "flat_house": "Unit 11"
+      },
+      "gender": "male",
+      "company": "Fisher, Morrow and Cook",
+      "salary": 140114.04,
+      "about_me": "I'm someone who values skiing and is fascinated by philosophy. Being adventurous by nature, I love hiking and hope to explore new cultures.",
+      "credit_card": {
+        "num": "2164-6545-8601-2007",
+        "cvv": "640",
+        "exp_date": "04/2030"
+      },
+      "created_at": "2026-11-16T17:42:30.403032"
+    },
+    {
+      "id": 322,
+      "name": "Jeremy",
+      "surname": "Walters",
+      "email": "jeremy.walters726@outlook.com",
+      "phone": "(338)282-4468x06686",
+      "date_of_birth": "2008-04-09",
+      "address": {
+        "country": "Lesotho",
+        "city": "Webbside",
+        "street": "715 Hoover Squares Suite 463",
+        "flat_house": "#63"
+      },
+      "gender": "male",
+      "company": null,
+      "salary": null,
+      "about_me": "I'm passionate about rock climbing and constantly exploring fitness. Being naturally passionate, I make time for skiing and am dedicated to travel the world.",
+      "credit_card": {
+        "num": "9292-0195-2720-2985",
+        "cvv": "659",
+        "exp_date": "10/2029"
+      },
+      "created_at": "2026-11-16T17:42:21.150042"
+    },
+    {
+      "id": 575,
+      "name": "Keith",
+      "surname": "Pierce",
+      "email": "keith.pierce293@gmail.com",
+      "phone": "945.596.6108",
+      "date_of_birth": "2001-03-11",
+      "address": {
+        "country": "Thailand",
+        "city": "Wrightberg",
+        "street": "155 Griffith Meadows",
+        "flat_house": "Unit 11"
+      },
+      "gender": "other",
+      "company": "Gonzalez, Mack and Spence",
+      "salary": 59007.97,
+      "about_me": "What defines my journey? A combination of skiing, health, and living as a laid-back individual. I'm passionate about hiking and committed to explore new cultures.",
+      "credit_card": {
+        "num": "8934-5093-6238-3187",
+        "cvv": "714",
+        "exp_date": "09/2029"
+      },
+      "created_at": "2026-11-16T17:42:24.939320"
+    }
+  ],
+  "hiking": [
+    {
+      "id": 956,
+      "name": "Perry",
+      "surname": "Brewer",
+      "email": "perry.brewer596@gmail.com",
+      "phone": "+1-454-600-8567x206",
+      "date_of_birth": "1988-12-04",
+      "address": {
+        "country": "Somalia",
+        "city": "Stevenmouth",
+        "street": "4689 Sawyer Ports",
+        "flat_house": "Unit 11"
+      },
+      "gender": "male",
+      "company": "Fisher, Morrow and Cook",
+      "salary": 140114.04,
+      "about_me": "I'm someone who values skiing and is fascinated by philosophy. Being adventurous by nature, I love hiking and hope to explore new cultures.",
+      "credit_card": {
+        "num": "2164-6545-8601-2007",
+        "cvv": "640",
+        "exp_date": "04/2030"
+      },
+      "created_at": "2026-11-16T17:42:30.403032"
+    },
+    {
+      "id": 820,
+      "name": "Derek",
+      "surname": "Schultz",
+      "email": "derek.schultz873@business.net",
+      "phone": "499-638-3067",
+      "date_of_birth": "1953-05-01",
+      "address": {
+        "country": "Bouvet Island (Bouvetoya)",
+        "city": "East Isabella",
+        "street": "45431 Moore Alley",
+        "flat_house": "House 957"
+      },
+      "gender": "other",
+      "company": "Rivera and Sons",
+      "salary": 125660.01,
+      "about_me": "Life's beauty lies in hiking, nature, and embracing being collaborative. I find balance through rock climbing while working towards continue growing personally.",
+      "credit_card": {
+        "num": "6887-4559-8100-8657",
+        "cvv": "245",
+        "exp_date": "09/2030"
+      },
+      "created_at": "2026-11-16T17:42:28.462633"
+    },
+    {
+      "id": 575,
+      "name": "Keith",
+      "surname": "Pierce",
+      "email": "keith.pierce293@gmail.com",
+      "phone": "945.596.6108",
+      "date_of_birth": "2001-03-11",
+      "address": {
+        "country": "Thailand",
+        "city": "Wrightberg",
+        "street": "155 Griffith Meadows",
+        "flat_house": "Unit 11"
+      },
+      "gender": "other",
+      "company": "Gonzalez, Mack and Spence",
+      "salary": 59007.97,
+      "about_me": "What defines my journey? A combination of skiing, health, and living as a laid-back individual. I'm passionate about hiking and committed to explore new cultures.",
+      "credit_card": {
+        "num": "8934-5093-6238-3187",
+        "cvv": "714",
+        "exp_date": "09/2029"
+      },
+      "created_at": "2026-11-16T17:42:24.939320"
+    },
+    {
+      "id": 171,
+      "name": "Melissa",
+      "surname": "Walker",
+      "email": "melissa.walker250@example.org",
+      "phone": "001-929-658-4611",
+      "date_of_birth": "1959-04-11",
+      "address": {
+        "country": "Bolivia",
+        "city": "New Brandon",
+        "street": "05989 Mccoy Circles Apt. 881",
+        "flat_house": "Apt 795"
+      },
+      "gender": "other",
+      "company": "Edwards PLC",
+      "salary": 93614.17,
+      "about_me": "I'm passionate about rock climbing and find myself constantly drawn to art. My passionate personality leads me to hiking and pursue achieve work-life balance.",
+      "credit_card": {
+        "num": "3757-8410-8675-2215",
+        "cvv": "663",
+        "exp_date": "01/2028"
+      },
+      "created_at": "2026-11-16T17:42:18.853047"
+    }
+  ],
+  "rock climbing": [
+    {
+      "id": 820,
+      "name": "Derek",
+      "surname": "Schultz",
+      "email": "derek.schultz873@business.net",
+      "phone": "499-638-3067",
+      "date_of_birth": "1953-05-01",
+      "address": {
+        "country": "Bouvet Island (Bouvetoya)",
+        "city": "East Isabella",
+        "street": "45431 Moore Alley",
+        "flat_house": "House 957"
+      },
+      "gender": "other",
+      "company": "Rivera and Sons",
+      "salary": 125660.01,
+      "about_me": "Life's beauty lies in hiking, nature, and embracing being collaborative. I find balance through rock climbing while working towards continue growing personally.",
+      "credit_card": {
+        "num": "6887-4559-8100-8657",
+        "cvv": "245",
+        "exp_date": "09/2030"
+      },
+      "created_at": "2026-11-16T17:42:28.462633"
+    },
+    {
+      "id": 322,
+      "name": "Jeremy",
+      "surname": "Walters",
+      "email": "jeremy.walters726@outlook.com",
+      "phone": "(338)282-4468x06686",
+      "date_of_birth": "2008-04-09",
+      "address": {
+        "country": "Lesotho",
+        "city": "Webbside",
+        "street": "715 Hoover Squares Suite 463",
+        "flat_house": "#63"
+      },
+      "gender": "male",
+      "company": null,
+      "salary": null,
+      "about_me": "I'm passionate about rock climbing and constantly exploring fitness. Being naturally passionate, I make time for skiing and am dedicated to travel the world.",
+      "credit_card": {
+        "num": "9292-0195-2720-2985",
+        "cvv": "659",
+        "exp_date": "10/2029"
+      },
+      "created_at": "2026-11-16T17:42:21.150042"
+    },
+    {
+      "id": 171,
+      "name": "Melissa",
+      "surname": "Walker",
+      "email": "melissa.walker250@example.org",
+      "phone": "001-929-658-4611",
+      "date_of_birth": "1959-04-11",
+      "address": {
+        "country": "Bolivia",
+        "city": "New Brandon",
+        "street": "05989 Mccoy Circles Apt. 881",
+        "flat_house": "Apt 795"
+      },
+      "gender": "other",
+      "company": "Edwards PLC",
+      "salary": 93614.17,
+      "about_me": "I'm passionate about rock climbing and find myself constantly drawn to art. My passionate personality leads me to hiking and pursue achieve work-life balance.",
+      "credit_card": {
+        "num": "3757-8410-8675-2215",
+        "cvv": "663",
+        "exp_date": "01/2028"
+      },
+      "created_at": "2026-11-16T17:42:18.853047"
+    }
+  ]
+}
+
+> Get 1001 users successfully
+🔄 Vectorstore synced: +0 new, -0 deleted users
+Retrieving context...
+Retrieved (Score: 0.239): 856 "id: 856\nabout_me: Hello! I'm a detail-oriented individual with a passion for coo"
+Retrieved (Score: 0.229): 860 "id: 860\nabout_me: I'm someone who thrives on cooking and has developed a love fo"
+Retrieved (Score: 0.228): 845 "id: 845\nabout_me: I'm someone who values cooking and stays curious about art. My"
+Retrieved (Score: 0.227): 246 'id: 246\nabout_me: What makes me tick? A combination of cooking, architecture, an'
+Retrieved (Score: 0.223): 616 'id: 616\nabout_me: What makes each day special? My passion for astronomy, interes'
+Retrieved (Score: 0.214): 832 "id: 832\nabout_me: I'm someone who thrives on cooking and has a genuine curiosity"
+Retrieved (Score: 0.205): 976 "id: 976\nabout_me: I'm passionate about writing and have developed a deep interes"
+Retrieved (Score: 0.204): 698 "id: 698\nabout_me: I'm someone who values cooking, is fascinated by philosophy, a"
+Retrieved (Score: 0.202): 22 'id: 22\nabout_me: What makes each day special? My passion for cooking, interest i'
+Retrieved (Score: 0.201): 690 "id: 690\nabout_me: What makes life meaningful? For me, it's astronomy, science, a"
+Retrieved (Score: 0.200): 159 'id: 159\nabout_me: What makes each moment special? My love for cooking, interest '
+====================================================================================================
+
+LLM grouping (IDs only): {"hobbies":[]}
+
+{}
+
+> Get 1001 users successfully
+🔄 Vectorstore synced: +0 new, -0 deleted users
+Retrieving context...
+Retrieved (Score: 0.273): 307 "id: 307\nabout_me: As someone who's naturally laid-back, I'm drawn to music and f"
+Retrieved (Score: 0.240): 642 "id: 642\nabout_me: I'm someone who thrives on chess and has a deep appreciation f"
+Retrieved (Score: 0.226): 277 'id: 277\nabout_me: I believe in living fully, which includes music and fashion. A'
+Retrieved (Score: 0.225): 614 "id: 614\nabout_me: I'm someone who values painting and stays curious about techno"
+Retrieved (Score: 0.218): 731 "id: 731\nabout_me: I'm a firm believer in following your passions - mine being mu"
+Retrieved (Score: 0.218): 643 'id: 643\nabout_me: I believe in living with purpose, which for me means gaming an'
+Retrieved (Score: 0.215): 15 'id: 15\nabout_me: I believe in living authentically, which means gaming and healt'
+Retrieved (Score: 0.212): 331 'id: 331\nabout_me: My world revolves around painting, nature, and the joy of bein'
+Retrieved (Score: 0.211): 704 'id: 704\nabout_me: What defines my journey? A love for music, curiosity about lit'
+Retrieved (Score: 0.204): 29 "id: 29\nabout_me: I'm someone who values health and finds peace in music. My anal"
+====================================================================================================
+
+LLM grouping (IDs only): {"hobbies":[]}
+
+{}
+
+> 

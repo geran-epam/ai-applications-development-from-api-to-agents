@@ -1,0 +1,436 @@
+### INPUT
+I need user emails that filled with hiking and psychology
+Who is John?
+Do we have smbd with name John that love painting?
+exit
+### OUTPUT
+/home/geran/projects/ai-tasks/t6_grounding/t2/input_vector_based.py:4: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+  from langchain_community.vectorstores import FAISS
+🔎 Loading all users...
+Get 1001 users successfully
+Formatting 1001 user documents...
+↗️ Creating embeddings and vectorstore for 1001 documents...
+✅ Vectorstore is ready.
+Query samples:
+ - I need user emails that filled with hiking and psychology
+ - Who is John?
+> Retrieving context...
+Retrieved (Score: 0.321): User:
+  id: 838
+  name: Dale
+  surname: Mitchell
+  email: dale.mitchell906@yahoo.com
+  phone: 624-600-5773
+  date_of_birth: 2005-06-01
+  address: {'country': 'Greenland', 'city': 'Port Carlosstad', 'street': '4549 Daniel Plain Apt. 637', 'flat_house': 'House 773'}
+  gender: male
+  company: None
+  salary: None
+  about_me: What defines my journey? A combination of hiking, philosophy, and living as a detail-oriented individual. I'm passionate about swimming and committed to give back to community.
+  credit_card: {'num': '9139-6579-3675-5070', 'cvv': '741', 'exp_date': '10/2030'}
+  created_at: 2026-11-16T17:42:28.729272
+
+
+Retrieved (Score: 0.313): User:
+  id: 337
+  name: Hannah
+  surname: Carroll
+  email: hannah.carroll330@yahoo.com
+  phone: 629-696-7554x767
+  date_of_birth: 1964-01-31
+  address: {'country': 'Australia', 'city': 'North Dianeside', 'street': '05421 Stephen Springs', 'flat_house': 'Unit 30'}
+  gender: other
+  company: Suarez LLC
+  salary: 120908.48
+  about_me: I find joy in cycling and am constantly inspired by psychology. My detail-oriented spirit helps me appreciate knitting and remain committed to stay healthy and active.
+  credit_card: {'num': '3519-7958-8301-1533', 'cvv': '712', 'exp_date': '12/2029'}
+  created_at: 2026-11-16T17:42:21.435394
+
+
+Retrieved (Score: 0.310): User:
+  id: 716
+  name: Hannah
+  surname: Summers
+  email: hannah.summers508@gmail.com
+  phone: 830-617-0240
+  date_of_birth: 2000-03-05
+  address: {'country': 'Philippines', 'city': 'Nguyenport', 'street': '8277 Tammy Camp Suite 681', 'flat_house': '#703'}
+  gender: female
+  company: None
+  salary: None
+  about_me: What defines my journey? A love for photography, curiosity about literature, and analytical approach to life. I make time for yoga and am working to help others.
+  credit_card: {'num': '1093-4472-2083-9568', 'cvv': '689', 'exp_date': '03/2028'}
+  created_at: 2026-11-16T17:42:26.828070
+
+
+Retrieved (Score: 0.308): User:
+  id: 857
+  name: Hannah
+  surname: Harrison
+  email: hannah.harrison504@outlook.com
+  phone: 001-903-884-7348
+  date_of_birth: 1980-03-22
+  address: {'country': 'Peru', 'city': 'Lake Rossshire', 'street': '28849 Ward Mountain', 'flat_house': 'House 416'}
+  gender: other
+  company: Allen Group
+  salary: 132941.15
+  about_me: What brings meaning to my days? swimming, sports, and living as a friendly individual. I'm passionate about cycling and focused on stay healthy and active.
+  credit_card: {'num': '1990-8127-0040-9806', 'cvv': '224', 'exp_date': '01/2030'}
+  created_at: 2026-11-16T17:42:29.073215
+
+
+Retrieved (Score: 0.308): User:
+  id: 38
+  name: Jill
+  surname: Rogers
+  email: jill.rogers565@yahoo.com
+  phone: 2512926450
+  date_of_birth: 1972-02-25
+  address: {'country': 'Israel', 'city': 'Lake Lisa', 'street': '92967 Kendra Knolls', 'flat_house': 'Unit 49'}
+  gender: female
+  company: None
+  salary: None
+  about_me: I'm energized by camping and have developed a fascination with nature. Being collaborative helps me appreciate surfing and stay focused on travel the world.
+  credit_card: {'num': '9696-6268-9808-8802', 'cvv': '193', 'exp_date': '07/2029'}
+  created_at: 2026-11-16T17:42:16.972758
+
+
+Retrieved (Score: 0.307): User:
+  id: 548
+  name: Holly
+  surname: Howard
+  email: holly.howard382@company.com
+  phone: 279-488-9056
+  date_of_birth: 1992-07-26
+  address: {'country': 'Georgia', 'city': 'Williamchester', 'street': '76933 Dunn Valley Suite 568', 'flat_house': '#777'}
+  gender: female
+  company: Lawrence Group
+  salary: 142424.36
+  about_me: What makes life meaningful? My passion for volunteering, curiosity about psychology, and curious approach to everything. I cherish fishing and am focused on continue growing personally.
+  credit_card: {'num': '8656-6142-2027-8121', 'cvv': '836', 'exp_date': '04/2027'}
+  created_at: 2026-11-16T17:42:24.553365
+
+
+Retrieved (Score: 0.304): User:
+  id: 678
+  name: Kayla
+  surname: Miller
+  email: kayla.miller527@test.edu
+  phone: 7863136806
+  date_of_birth: 1978-03-31
+  address: {'country': 'Fiji', 'city': 'Jacksonstad', 'street': '65438 Alicia Bypass', 'flat_house': 'Apt 785'}
+  gender: other
+  company: None
+  salary: None
+  about_me: I believe in pursuing what makes you happy - for me, that's painting and literature. My patient personality shines when I'm martial arts or working to help others.
+  credit_card: {'num': '0835-5517-6658-6111', 'cvv': '106', 'exp_date': '10/2030'}
+  created_at: 2026-11-16T17:42:26.288024
+
+
+Retrieved (Score: 0.302): User:
+  id: 265
+  name: Jordan
+  surname: Haas
+  email: jordan.haas803@business.net
+  phone: 694.207.2994
+  date_of_birth: 1948-12-14
+  address: {'country': 'Lithuania', 'city': 'Kayleeburgh', 'street': '32183 Jones Pine', 'flat_house': 'Suite 193'}
+  gender: other
+  company: Morse, Barton and Harris
+  salary: 55509.05
+  about_me: I find meaning in gaming and am constantly inspired by literature. As someone who's adventurous, I love running and am committed to travel the world.
+  credit_card: {'num': '9391-6304-6822-8398', 'cvv': '974', 'exp_date': '06/2027'}
+  created_at: 2026-11-16T17:42:20.151487
+
+
+Retrieved (Score: 0.295): User:
+  id: 410
+  name: Jessica
+  surname: Gray
+  email: jessica.gray36@outlook.com
+  phone: +1-511-979-9331x52253
+  date_of_birth: 1976-11-25
+  address: {'country': 'Barbados', 'city': 'New Mary', 'street': '705 Mcgee Ports Suite 324', 'flat_house': 'Suite 557'}
+  gender: other
+  company: None
+  salary: None
+  about_me: I find balance through gardening and stay curious about culture. My spontaneous personality leads me to martial arts and pursue travel the world.
+  credit_card: {'num': '3354-1765-8210-8224', 'cvv': '039', 'exp_date': '10/2028'}
+  created_at: 2026-11-16T17:42:22.590815
+
+
+Retrieved (Score: 0.292): User:
+  id: 658
+  name: Rose
+  surname: Best
+  email: rose.best863@yahoo.com
+  phone: +1-467-666-0177x88700
+  date_of_birth: 1983-03-24
+  address: {'country': 'Mayotte', 'city': 'Tinachester', 'street': '55234 Davidson Port', 'flat_house': 'Apt 499'}
+  gender: other
+  company: None
+  salary: None
+  about_me: Life's too short not to pursue what you love! For me, that's hiking, food, and running. Being analytical, I'm committed to explore new cultures.
+  credit_card: {'num': '0976-0609-5797-9974', 'cvv': '920', 'exp_date': '03/2029'}
+  created_at: 2026-11-16T17:42:26.010253
+
+
+====================================================================================================
+
+
+Answer: No user in the provided data is described as being interested in both hiking and psychology.
+
+> Retrieving context...
+Retrieved (Score: 0.160): User:
+  id: 108
+  name: John
+  surname: King
+  email: john.king439@test.edu
+  phone: 908.794.0507x97849
+  date_of_birth: 1958-06-13
+  address: {'country': 'French Polynesia', 'city': 'North Michealside', 'street': '22283 Lane Burgs', 'flat_house': 'Apt 415'}
+  gender: male
+  company: Wagner Group
+  salary: 59325.25
+  about_me: I'm someone who thrives on painting and has a deep appreciation for business. Being passionate by nature, I find fulfillment in meditation and strive to make a positive impact.
+  credit_card: {'num': '3635-0773-1895-4081', 'cvv': '815', 'exp_date': '03/2028'}
+  created_at: 2026-11-16T17:42:17.902409
+
+
+Retrieved (Score: 0.156): User:
+  id: 935
+  name: John
+  surname: Conway
+  email: john.conway914@gmail.com
+  phone: 001-540-415-5155
+  date_of_birth: 1953-05-08
+  address: {'country': 'Cuba', 'city': 'Cynthialand', 'street': '63995 Avila Crossing', 'flat_house': 'Unit 33'}
+  gender: male
+  company: Campos LLC
+  salary: 147907.07
+  about_me: What defines me? My love for traveling, fascination with culture, and thoughtful personality. I spend my free time hiking and am dedicated to start my own business.
+  credit_card: {'num': '5478-7510-1517-0825', 'cvv': '829', 'exp_date': '02/2027'}
+  created_at: 2026-11-16T17:42:30.107184
+
+
+Retrieved (Score: 0.151): User:
+  id: 211
+  name: John
+  surname: Burke
+  email: john.burke573@test.edu
+  phone: 675.267.0959
+  date_of_birth: 2006-12-31
+  address: {'country': 'Montserrat', 'city': 'East Calebfurt', 'street': '9373 Acevedo Alley Suite 188', 'flat_house': 'Apt 288'}
+  gender: male
+  company: Jackson, Webb and Romero
+  salary: 51060.09
+  about_me: My passions include skiing, history, and living authentically as a optimistic individual. I love spending time surfing and am focused on pursue creative projects.
+  credit_card: {'num': '3785-3298-0420-9738', 'cvv': '092', 'exp_date': '09/2029'}
+  created_at: 2026-11-16T17:42:19.401768
+
+
+Retrieved (Score: 0.132): User:
+  id: 177
+  name: John
+  surname: White
+  email: john.white276@gmail.com
+  phone: 001-245-224-7141x5821
+  date_of_birth: 1954-06-02
+  address: {'country': 'Luxembourg', 'city': 'Timothyside', 'street': '5261 Anderson Motorway Suite 803', 'flat_house': 'Apt 921'}
+  gender: male
+  company: Deleon-Robinson
+  salary: 151591.81
+  about_me: I'm driven by my love for painting and curiosity about technology. Being naturally resourceful, I find fulfillment in skiing and strive to master new skills.
+  credit_card: {'num': '2537-4357-6588-8092', 'cvv': '276', 'exp_date': '07/2029'}
+  created_at: 2026-11-16T17:42:18.927418
+
+
+Retrieved (Score: 0.130): User:
+  id: 531
+  name: John
+  surname: Lyons
+  email: john.lyons415@test.edu
+  phone: (378)299-6395
+  date_of_birth: 1968-08-07
+  address: {'country': 'Puerto Rico', 'city': 'Wilkinsside', 'street': '705 Brandi Locks', 'flat_house': 'Unit 49'}
+  gender: male
+  company: Orr Group
+  salary: 153765.14
+  about_me: My interests include knitting, cooking, martial arts and I'm always eager to learn about food. I'm a optimistic individual who values make a positive impact. Looking forward to new adventures and experiences!
+  credit_card: {'num': '9873-0647-6168-0371', 'cvv': '933', 'exp_date': '07/2028'}
+  created_at: 2026-11-16T17:42:24.322217
+
+
+Retrieved (Score: 0.127): User:
+  id: 64
+  name: John
+  surname: Rodgers
+  email: john.rodgers810@hotmail.com
+  phone: (649)260-7976
+  date_of_birth: 1987-12-20
+  address: {'country': 'Saudi Arabia', 'city': 'Jodiborough', 'street': '96292 Michael Lights', 'flat_house': 'Apt 160'}
+  gender: other
+  company: Tanner-Williams
+  salary: 53943.57
+  about_me: What makes each moment special? My love for surfing, interest in fashion, and friendly perspective on everything. I enjoy astronomy while working towards start my own business.
+  credit_card: {'num': '5743-9477-1442-4799', 'cvv': '408', 'exp_date': '06/2031'}
+  created_at: 2026-11-16T17:42:17.321337
+
+
+Retrieved (Score: 0.126): User:
+  id: 930
+  name: John
+  surname: Villa
+  email: john.villa222@yahoo.com
+  phone: 8558135961
+  date_of_birth: 1952-10-19
+  address: {'country': 'Cuba', 'city': 'Lake Tiffany', 'street': '3569 Martha Island', 'flat_house': 'Suite 553'}
+  gender: other
+  company: None
+  salary: None
+  about_me: My life is a blend of dancing, sports, and authentic adventurous living. I cherish time spent surfing and am passionate about make a positive impact.
+  credit_card: {'num': '0391-9281-8270-1944', 'cvv': '160', 'exp_date': '03/2028'}
+  created_at: 2026-11-16T17:42:30.032009
+
+
+Retrieved (Score: 0.124): User:
+  id: 734
+  name: John
+  surname: Flores
+  email: john.flores791@example.org
+  phone: 555.729.2997x4582
+  date_of_birth: 1951-12-29
+  address: {'country': 'Taiwan', 'city': 'Amymouth', 'street': '2483 Glenn Mountains', 'flat_house': 'Suite 806'}
+  gender: other
+  company: Reyes PLC
+  salary: 69365.77
+  about_me: People often describe me as resourceful and empathetic. In my spare time, I love cycling and exploring languages. I'm working towards learn new languages.
+  credit_card: {'num': '4878-6023-6808-7421', 'cvv': '590', 'exp_date': '12/2030'}
+  created_at: 2026-11-16T17:42:27.110364
+
+
+Retrieved (Score: 0.123): User:
+  id: 762
+  name: John
+  surname: Thomas
+  email: john.thomas650@yahoo.com
+  phone: +1-529-756-4530x5378
+  date_of_birth: 1961-11-23
+  address: {'country': 'Lebanon', 'city': 'Robertashire', 'street': '9722 Lopez Cliff Apt. 292', 'flat_house': '#442'}
+  gender: other
+  company: None
+  salary: None
+  about_me: I find fulfillment in chess and am constantly learning about education. My independent nature shines when I'm bird watching or planning to travel the world.
+  credit_card: {'num': '5892-2982-9660-6854', 'cvv': '543', 'exp_date': '07/2030'}
+  created_at: 2026-11-16T17:42:27.521142
+
+
+Retrieved (Score: 0.121): User:
+  id: 560
+  name: John
+  surname: Rojas
+  email: john.rojas512@business.net
+  phone: (935)389-2685
+  date_of_birth: 1963-04-17
+  address: {'country': 'Nauru', 'city': 'Johnfort', 'street': '28268 Garcia Ports', 'flat_house': 'Apt 122'}
+  gender: male
+  company: None
+  salary: None
+  about_me: I'm someone who thrives on photography and has a deep appreciation for health. Being adventurous by nature, I enjoy martial arts and hope to achieve work-life balance.
+  credit_card: {'num': '0215-6232-8130-4946', 'cvv': '797', 'exp_date': '06/2030'}
+  created_at: 2026-11-16T17:42:24.710236
+
+
+====================================================================================================
+
+
+Answer: There are multiple users named John in the provided data:
+
+- John King, id 108
+- John Conway, id 935
+- John Burke, id 211
+- John White, id 177
+- John Lyons, id 531
+- John Rodgers, id 64
+- John Villa, id 930
+- John Flores, id 734
+- John Thomas, id 762
+- John Rojas, id 560
+
+A surname or other identifying detail is needed to determine which John you mean.
+
+> Retrieving context...
+Retrieved (Score: 0.143): User:
+  id: 108
+  name: John
+  surname: King
+  email: john.king439@test.edu
+  phone: 908.794.0507x97849
+  date_of_birth: 1958-06-13
+  address: {'country': 'French Polynesia', 'city': 'North Michealside', 'street': '22283 Lane Burgs', 'flat_house': 'Apt 415'}
+  gender: male
+  company: Wagner Group
+  salary: 59325.25
+  about_me: I'm someone who thrives on painting and has a deep appreciation for business. Being passionate by nature, I find fulfillment in meditation and strive to make a positive impact.
+  credit_card: {'num': '3635-0773-1895-4081', 'cvv': '815', 'exp_date': '03/2028'}
+  created_at: 2026-11-16T17:42:17.902409
+
+
+Retrieved (Score: 0.119): User:
+  id: 177
+  name: John
+  surname: White
+  email: john.white276@gmail.com
+  phone: 001-245-224-7141x5821
+  date_of_birth: 1954-06-02
+  address: {'country': 'Luxembourg', 'city': 'Timothyside', 'street': '5261 Anderson Motorway Suite 803', 'flat_house': 'Apt 921'}
+  gender: male
+  company: Deleon-Robinson
+  salary: 151591.81
+  about_me: I'm driven by my love for painting and curiosity about technology. Being naturally resourceful, I find fulfillment in skiing and strive to master new skills.
+  credit_card: {'num': '2537-4357-6588-8092', 'cvv': '276', 'exp_date': '07/2029'}
+  created_at: 2026-11-16T17:42:18.927418
+
+
+Retrieved (Score: 0.114): User:
+  id: 331
+  name: Christopher
+  surname: Davidson
+  email: christopher.davidson585@test.edu
+  phone: 001-650-912-6161x602
+  date_of_birth: 1976-11-22
+  address: {'country': 'Syrian Arab Republic', 'city': 'New Carlosland', 'street': '1841 Jones Parkways', 'flat_house': 'Suite 953'}
+  gender: male
+  company: Welch, Cook and Parker
+  salary: 126672.44
+  about_me: My world revolves around painting, nature, and the joy of being collaborative. I'm passionate about music and dedicated to continue growing personally.
+  credit_card: {'num': '8362-7810-2492-6251', 'cvv': '556', 'exp_date': '05/2031'}
+  created_at: 2026-11-16T17:42:21.331980
+
+
+Retrieved (Score: 0.103): User:
+  id: 211
+  name: John
+  surname: Burke
+  email: john.burke573@test.edu
+  phone: 675.267.0959
+  date_of_birth: 2006-12-31
+  address: {'country': 'Montserrat', 'city': 'East Calebfurt', 'street': '9373 Acevedo Alley Suite 188', 'flat_house': 'Apt 288'}
+  gender: male
+  company: Jackson, Webb and Romero
+  salary: 51060.09
+  about_me: My passions include skiing, history, and living authentically as a optimistic individual. I love spending time surfing and am focused on pursue creative projects.
+  credit_card: {'num': '3785-3298-0420-9738', 'cvv': '092', 'exp_date': '09/2029'}
+  created_at: 2026-11-16T17:42:19.401768
+
+
+====================================================================================================
+
+
+Answer: Yes. We have three users named John who mention painting:
+
+- **John King** — enjoys painting.
+- **John White** — loves painting.
+- **John Burke** — does not mention painting.
+
+> 

@@ -1,0 +1,195 @@
+### INPUT
+Do we have someone with name John that loves traveling?
+### OUTPUT
+Query samples:
+ - Do we have someone with name John that loves traveling?
+> 
+--- Searching user database ---
+Get 1000 users successfully
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Processing...
+Response:
+NO_MATCHES_FOUND
+Tokens used: 20548
+
+Response:
+User:
+  id: 837
+  name: John
+  surname: Carter
+  email: john.carter255@company.com
+  phone: 001-377-349-9508x570
+  date_of_birth: 1981-02-25
+  address: {'country': 'Somalia', 'city': 'Port Traceyview', 'street': '931 Thomas Spring Suite 477', 'flat_house': 'Suite 902'}
+  gender: male
+  company: Foster and Sons
+  salary: 182944.14
+  about_me: My world is shaped by music, food, and authentic ambitious living. I'm passionate about camping and committed to learn new languages.
+  credit_card: {'num': '8290-4264-7939-6620', 'cvv': '734', 'exp_date': '01/2030'}
+  created_at: 2026-11-16T17:42:28.692864
+Tokens used: 20919
+
+Response:
+User:
+  id: 531
+  name: John
+  surname: Lyons
+  email: john.lyons415@test.edu
+  phone: (378)299-6395
+  date_of_birth: 1968-08-07
+  address: {'country': 'Puerto Rico', 'city': 'Wilkinsside', 'street': '705 Brandi Locks', 'flat_house': 'Unit 49'}
+  gender: male
+  company: Orr Group
+  salary: 153765.14
+  about_me: My interests include knitting, cooking, martial arts and I'm always eager to learn about food. I'm a optimistic individual who values make a positive impact. Looking forward to new adventures and experiences!
+  credit_card: {'num': '9873-0647-6168-0371', 'cvv': '933', 'exp_date': '07/2028'}
+  created_at: 2026-11-16T17:42:24.322217
+Tokens used: 20828
+
+Response:
+User:
+  id: 177
+  name: John
+  surname: White
+  email: john.white276@gmail.com
+  phone: 001-245-224-7141x5821
+  date_of_birth: 1954-06-02
+  address: {'country': 'Luxembourg', 'city': 'Timothyside', 'street': '5261 Anderson Motorway Suite 803', 'flat_house': 'Apt 921'}
+  gender: male
+  company: Deleon-Robinson
+  salary: 151591.81
+  about_me: I'm driven by my love for painting and curiosity about technology. Being naturally resourceful, I find fulfillment in skiing and strive to master new skills.
+  credit_card: {'num': '2537-4357-6588-8092', 'cvv': '276', 'exp_date': '07/2029'}
+  created_at: 2026-11-16T17:42:18.927418
+Tokens used: 20782
+
+Response:
+User:
+  id: 211
+  name: John
+  surname: Burke
+  email: john.burke573@test.edu
+  phone: 675.267.0959
+  date_of_birth: 2006-12-31
+  address: {'country': 'Montserrat', 'city': 'East Calebfurt', 'street': '9373 Acevedo Alley Suite 188', 'flat_house': 'Apt 288'}
+  gender: male
+  company: Jackson, Webb and Romero
+  salary: 51060.09
+  about_me: My passions include skiing, history, and living authentically as a optimistic individual. I love spending time surfing and am focused on pursue creative projects.
+  credit_card: {'num': '3785-3298-0420-9738', 'cvv': '092', 'exp_date': '09/2029'}
+  created_at: 2026-11-16T17:42:19.401768
+Tokens used: 20825
+
+Response:
+User:
+  id: 444
+  name: John
+  surname: Scott
+  email: john.scott595@example.org
+  phone: (672)424-4053x29683
+  date_of_birth: 2001-10-24
+  address: {'country': 'Grenada', 'city': 'East Lisa', 'street': '4793 Daniel Via', 'flat_house': 'House 370'}
+  gender: male
+  company: Parker-Salazar
+  salary: 132646.82
+  about_me: I believe in living fully, which for me means cooking, exploring health, and being genuinely ambitious. I make time for traveling while pursuing learn new languages.
+  credit_card: {'num': '6315-1602-6205-3519', 'cvv': '213', 'exp_date': '01/2030'}
+  created_at: 2026-11-16T17:42:23.090311
+Tokens used: 20890
+
+Response:
+User:
+  id: 75
+  name: John
+  surname: Rogers
+  email: john.rogers424@outlook.com
+  phone: +1-630-576-2239x8575
+  date_of_birth: 1978-09-19
+  address: {'country': 'Indonesia', 'city': 'Lake Justinside', 'street': '8733 Swanson Neck Apt. 871', 'flat_house': 'Unit 4'}
+  gender: male
+  company: Nichols-Myers
+  salary: 164131.93
+  about_me: Life's beauty lies in traveling, culture, and embracing being thoughtful. I find balance through fishing while working towards stay healthy and active.
+  credit_card: {'num': '2990-0360-7136-0427', 'cvv': '354', 'exp_date': '12/2027'}
+  created_at: 2026-11-16T17:42:17.466841
+Tokens used: 20834
+
+Response:
+User:
+  id: 734
+  name: John
+  surname: Flores
+  email: john.flores791@example.org
+  phone: 555.729.2997x4582
+  date_of_birth: 1951-12-29
+  address: {'country': 'Taiwan', 'city': 'Amymouth', 'street': '2483 Glenn Mountains', 'flat_house': 'Suite 806'}
+  gender: other
+  company: Reyes PLC
+  salary: 69365.77
+  about_me: People often describe me as resourceful and empathetic. In my spare time, I love cycling and exploring languages. I'm working towards learn new languages.
+  credit_card: {'num': '4878-6023-6808-7421', 'cvv': '590', 'exp_date': '12/2030'}
+  created_at: 2026-11-16T17:42:27.110364
+
+User:
+  id: 762
+  name: John
+  surname: Thomas
+  email: john.thomas650@yahoo.com
+  phone: +1-529-756-4530x5378
+  date_of_birth: 1961-11-23
+  address: {'country': 'Lebanon', 'city': 'Robertashire', 'street': '9722 Lopez Cliff Apt. 292', 'flat_house': '#442'}
+  gender: other
+  company: None
+  salary: None
+  about_me: I find fulfillment in chess and am constantly learning about education. My independent nature shines when I'm bird watching or planning to travel the world.
+  credit_card: {'num': '5892-2982-9660-6854', 'cvv': '543', 'exp_date': '07/2030'}
+  created_at: 2026-11-16T17:42:27.521142
+Tokens used: 21032
+
+Response:
+User:
+  id: 935
+  name: John
+  surname: Conway
+  email: john.conway914@gmail.com
+  phone: 001-540-415-5155
+  date_of_birth: 1953-05-08
+  address: {'country': 'Cuba', 'city': 'Cynthialand', 'street': '63995 Avila Crossing', 'flat_house': 'Unit 33'}
+  gender: male
+  company: Campos LLC
+  salary: 147907.07
+  about_me: What defines me? My love for traveling, fascination with culture, and thoughtful personality. I spend my free time hiking and am dedicated to start my own business.
+  credit_card: {'num': '5478-7510-1517-0825', 'cvv': '829', 'exp_date': '02/2027'}
+  created_at: 2026-11-16T17:42:30.107184
+Tokens used: 20848
+
+Response:
+NO_MATCHES_FOUND
+Tokens used: 20743
+
+
+--- Compiling results ---
+
+=== SEARCH RESULTS ===
+Processing...
+Response:
+Yes. The following users named John mention loving or enjoying traveling:
+
+- **John Rogers** — “Life's beauty lies in traveling, culture, and embracing being thoughtful.”
+- **John Thomas** — “...planning to travel the world.”
+- **John Conway** — “My love for traveling, fascination with culture, and thoughtful personality.”
+- **John Scott** — “I make time for traveling while pursuing learn new languages.”
+Tokens used: 2042
+
+
+=== Performance ===
+Total API calls: 11
+Total tokens: 210291
