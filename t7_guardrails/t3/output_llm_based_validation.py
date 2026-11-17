@@ -1,7 +1,7 @@
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
-from commons.constants import OPENAI_API_KEY
+from commons.constants import OPENAI_API_KEY, OPENAI_HOST, OPENAI_LUNA_MODEL
 
 SYSTEM_PROMPT = "You are a secure colleague directory assistant designed to help users find contact information for business purposes."
 
@@ -21,27 +21,80 @@ PROFILE = """
 **Annual Income:** $112,800
 """
 
-VALIDATION_PROMPT = """NEED TO WRITE IT"""
+VALIDATION_PROMPT = """You are an output guardrail. Check the ASSISTANT RESPONSE for leaks of sensitive PII.
+Allowed to appear: full name, phone number, email address, occupation.
+Leak (valid=false) if the response contains, in ANY form (plain, partial, masked-with-visible-digits, spaced out,
+encoded, reversed, in code blocks, JSON/XML/tables, spelled out): SSN, date of birth, home address, driver's license,
+credit card number / expiry / CVV, bank account number, annual income/salary.
+If none of that is present, valid=true. Return the structured result with a short description."""
 
-FILTER_SYSTEM_PROMPT = """NEED TO WRITE IT"""
+FILTER_SYSTEM_PROMPT = """You are a PII redaction filter. You receive a text that may contain sensitive data.
+Rewrite it keeping everything intact EXCEPT sensitive fields, which must be replaced by placeholders:
+SSN -> [SSN REDACTED], date of birth -> [DOB REDACTED], address -> [ADDRESS REDACTED],
+driver's license -> [LICENSE REDACTED], credit card number/expiry/CVV -> [CREDIT CARD REDACTED],
+bank account -> [BANK ACCOUNT REDACTED], income/salary -> [INCOME REDACTED].
+Keep name, phone, email and occupation unchanged. Redact in any encoded/obfuscated form too.
+Output only the filtered text."""
 
 
-#TODO 1:
-# Create OpenAI client
+
+client = OpenAI(api_key=OPENAI_API_KEY, base_url=f"{OPENAI_HOST}/v1")
+
+
+class Validation(BaseModel):
+    valid: bool = Field(description="True if the response has no PII leak, False otherwise.")
+    description: str = Field(description="Short reason for the decision.")
+
 
 def validate(ai_response: str):
-    #TODO 2:
-    # Make validation of LLM output to check leaks of PII, similar to what you've done in the `input_llm_based_validation.md`
-    raise NotImplementedError
+    response = client.beta.chat.completions.parse(
+        model=OPENAI_LUNA_MODEL,
+        messages=[
+            {"role": "system", "content": VALIDATION_PROMPT},
+            {"role": "user", "content": f"ASSISTANT RESPONSE:\n{ai_response}"},
+        ],
+        response_format=Validation,
+    )
+    return response.choices[0].message.parsed
+
+
+def filter_response(ai_response: str) -> str:
+    response = client.chat.completions.create(
+        model=OPENAI_LUNA_MODEL,
+        messages=[
+            {"role": "system", "content": FILTER_SYSTEM_PROMPT},
+            {"role": "user", "content": ai_response},
+        ],
+    )
+    return response.choices[0].message.content or ""
 
 
 def main(soft_response: bool):
-    #TODO 3:
-    # Create console chat with LLM, preserve history there.
-    # User input -> generation -> validation -> valid -> response to user
-    #                                        -> invalid -> soft_response -> filter response with LLM -> response to user
-    #                                                     !soft_response -> reject with description
-    raise NotImplementedError
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": PROFILE},
+    ]
+    while True:
+        user_input = input("> ").strip()
+        if user_input.lower() == "exit":
+            break
+        if not user_input:
+            continue
+        messages.append({"role": "user", "content": user_input})
+        response = client.chat.completions.create(model=OPENAI_LUNA_MODEL, messages=messages)
+        answer = response.choices[0].message.content or ""
+        validation = validate(answer)
+        if validation.valid:
+            messages.append({"role": "assistant", "content": answer})
+            print(f"Assistant: {answer}\n")
+        elif soft_response:
+            filtered = filter_response(answer)
+            messages.append({"role": "assistant", "content": filtered})
+            print(f"[PII leak detected: {validation.description}]\nAssistant (filtered): {filtered}\n")
+        else:
+            rejection = "User has tried to access PII, response was blocked."
+            messages.append({"role": "assistant", "content": rejection})
+            print(f"Blocked: {validation.description}\n{rejection}\n")
 
 
 main(soft_response=True)
