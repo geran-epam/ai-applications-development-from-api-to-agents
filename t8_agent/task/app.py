@@ -1,4 +1,6 @@
-from commons.constants import OPENAI_API_KEY, ANTHROPIC_API_KEY
+import os
+
+from commons.constants import OPENAI_API_KEY, ANTHROPIC_API_KEY, OPENAI_TERRA_MODEL, ANTHROPIC_SONNET_MODEL
 from commons.models.conversation import Conversation
 from commons.models.message import Message
 from commons.models.role import Role
@@ -16,17 +18,37 @@ from t8_agent.task.tools.web_search import WebSearchTool
 
 
 def main():
-    #TODO:
-    # 1. Create UserClient
-    # 2. Create list with all tools (WebSearchTool, GetUserByIdTool, SearchUsersTool, CreateUserTool, UpdateUserTool, DeleteUserTool)
-    # 3. Create OpenAIBasedAgent with all tools (or AnthropicBasedAgent)
-    # 4. Create Conversation
-    # 5. Run infinite loop and in loop and:
-    #    - get user input from terminal (`input("> ").strip()`)
-    #    - Add User message to Conversation
-    #    - Call OpenAIClient with conversation history
-    #    - Add Assistant message to Conversation and print its content
-    raise NotImplementedError()
+    user_client = UserServiceClient()
+    tools = [
+        WebSearchTool(OPENAI_API_KEY),
+        GetUserByIdTool(user_client),
+        SearchUsersTool(user_client),
+        CreateUserTool(user_client),
+        UpdateUserTool(user_client),
+        DeleteUserTool(user_client),
+    ]
+
+    # Provider is selected with AGENT_PROVIDER=openai|anthropic (default: openai)
+    if os.getenv("AGENT_PROVIDER", "openai").lower() == "anthropic":
+        agent = AnthropicBasedAgent(ANTHROPIC_SONNET_MODEL, ANTHROPIC_API_KEY, tools, SYSTEM_PROMPT)
+    else:
+        agent = OpenAIBasedAgent(OPENAI_TERRA_MODEL, OPENAI_API_KEY, tools, SYSTEM_PROMPT)
+
+    conversation = Conversation()
+    while True:
+        try:
+            user_input = input("> ").strip()
+        except EOFError:
+            break
+        if user_input.lower() == "exit":
+            break
+        if not user_input:
+            continue
+
+        conversation.add_message(Message(role=Role.USER, content=user_input))
+        ai_message = agent.get_response(conversation.get_messages())
+        conversation.add_message(ai_message)
+        print(f"\nAI: {ai_message.content}\n")
 
 
 main()

@@ -14,22 +14,38 @@ class WebSearchTool(BaseTool):
 
     @property
     def name(self) -> str:
-        #TODO: Provide tool name as `web_search_tool`
-        raise NotImplementedError()
+        return "web_search_tool"
 
     @property
     def description(self) -> str:
-        #TODO: Provide description of this tool
-        raise NotImplementedError()
+        return "Tool for WEB searching. Use it to find up-to-date public information (e.g. about a person) on the internet."
 
     @property
     def input_schema(self) -> dict[str, Any]:
-        #TODO: Provide tool params Schema (it applies `request` string to search by)
-        raise NotImplementedError()
+        return {
+            "type": "object",
+            "properties": {
+                "request": {
+                    "type": "string",
+                    "description": "The search query or question to search for on the web",
+                }
+            },
+            "required": ["request"],
+        }
 
     def execute(self, arguments: dict[str, Any]) -> str:
-        #TODO:
-        # https://developers.openai.com/api/docs/guides/tools-web-search
-        # 1. Make POST call to `OPENAI_TERRA_MODEL` with request "tools": [{"type": "web_search"}],
-        # 4. Check if response status is 200 and if yes then return message content, otherwise return `f"Error: {response.status_code} {response.text}"`
-        raise NotImplementedError()
+        headers = {"Authorization": self.__api_key, "Content-Type": "application/json"}
+        request_data = {
+            "model": OPENAI_TERRA_MODEL,
+            "input": arguments["request"],
+            "tools": [{"type": "web_search"}],
+        }
+        response = requests.post(self.__endpoint, headers=headers, json=request_data)
+        if response.status_code == 200:
+            for item in response.json().get("output", []):
+                if item.get("type") == "message":
+                    for block in item.get("content", []):
+                        if block.get("type") == "output_text":
+                            return block["text"]
+            return "Error: no output_text found in the response"
+        return f"Error: {response.status_code} {response.text}"

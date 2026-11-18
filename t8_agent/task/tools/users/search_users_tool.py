@@ -4,30 +4,37 @@ from t8_agent.task.tools.users.base import BaseUserServiceTool
 
 
 class SearchUsersTool(BaseUserServiceTool):
+    MAX_CHARS = 6000
 
     @property
     def name(self) -> str:
-        #TODO: Provide tool name as `search_users`
-        raise NotImplementedError()
+        return "search_users"
 
     @property
     def description(self) -> str:
-        #TODO: Provide description of this tool
-        raise NotImplementedError()
+        return (
+            "Searches users by name, surname, email or gender. "
+            "All parameters are optional; provided ones are combined as filters."
+        )
 
     @property
     def input_schema(self) -> dict[str, Any]:
-        #TODO:
-        # Provide tool params Schema:
-        # - name: str
-        # - surname: str
-        # - email: str
-        # - gender: str
-        # None of them are required (see UserClient.search_users method)
-        raise NotImplementedError()
+        return {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the user"},
+                "surname": {"type": "string", "description": "Surname of the user"},
+                "email": {"type": "string", "description": "Email of the user"},
+                "gender": {"type": "string", "description": "Gender of the user"},
+            },
+            "required": [],
+        }
 
     def execute(self, arguments: dict[str, Any]) -> str:
-        #TODO:
-        # 1. Call user_client search_users (with `**arguments`) and return its results
-        # 2. Optional: You can wrap it with `try-except` and return error as string `f"Error while searching users: {str(e)}"`
-        raise NotImplementedError()
+        try:
+            result = self._user_client.search_users(**arguments)
+            if len(result) > self.MAX_CHARS:
+                return result[:self.MAX_CHARS] + f"\n... [truncated, output exceeded {self.MAX_CHARS} characters; refine the search filters]"
+            return result
+        except Exception as e:
+            return f"Error while searching users: {str(e)}"
