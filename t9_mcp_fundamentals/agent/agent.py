@@ -4,6 +4,7 @@ from typing import Any
 
 from openai import AsyncOpenAI
 
+from commons.constants import OPENAI_HOST
 from commons.models.message import Message
 from commons.models.role import Role
 from t9_mcp_fundamentals.agent.mcp_clients.base import MCPClient
@@ -16,7 +17,7 @@ class AgentMCPFundamentals:
         self.model=model
         self.tools = tools
         self.mcp_client = mcp_client
-        self.openai = AsyncOpenAI(api_key=api_key)
+        self.openai = AsyncOpenAI(api_key=api_key, base_url=f"{OPENAI_HOST}/v1")
 
     def _collect_tool_calls(self, tool_deltas):
         """Convert streaming tool call deltas to complete tool calls"""
@@ -80,9 +81,13 @@ class AgentMCPFundamentals:
 
     async def _call_tools(self, ai_message: Message, messages: list[Message]):
         """Execute tool calls using MCP client"""
-        #TODO:
-        # 1. Iterate through tool_calls
-        # 2. Get tool name and tool arguments (arguments is a JSON, don't forget about that)
-        # 3. Wrap into try/except block and call mcp_client tool call. If succeed then add tool message (don't forget
-        #    about tool call id), otherwise add tool message with error message (it kind of fallback strategy).
-        raise NotImplementedError()
+        for tool_call in ai_message.tool_calls:
+            tool_name = tool_call["function"]["name"]
+            try:
+                tool_args = json.loads(tool_call["function"]["arguments"] or "{}")
+                print(f"🔧 {tool_name}({tool_args})")
+                result = await self.mcp_client.call_tool(tool_name, tool_args)
+                content = result if isinstance(result, str) else str(result)
+            except Exception as e:
+                content = f"Error executing tool '{tool_name}': {e}"
+            messages.append(Message(role=Role.TOOL, content=content, tool_call_id=tool_call["id"], name=tool_name))

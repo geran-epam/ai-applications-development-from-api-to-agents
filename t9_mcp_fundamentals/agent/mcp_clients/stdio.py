@@ -54,13 +54,11 @@ class StdioMCPClient(MCPClient):
         self.env = env
 
     def _build_server_params(self) -> StdioServerParameters:
-        #TODO:
-        # Build and return a `StdioServerParameters` depending on the launch mode:
-        # - If `self.docker_image` is set — return StdioServerParameters with:
-        #     command="docker", args=["run", "--rm", "-i", self.docker_image], env=self.env
-        # - Otherwise — return StdioServerParameters with:
-        #     command=self.command, args=self.args, env=self.env
-        raise NotImplementedError()
+        if self.docker_image:
+            return StdioServerParameters(
+                command="docker", args=["run", "--rm", "-i", self.docker_image], env=self.env
+            )
+        return StdioServerParameters(command=self.command, args=self.args, env=self.env)
 
     def _startup_message(self) -> str:
         if self.docker_image:
@@ -71,19 +69,15 @@ class StdioMCPClient(MCPClient):
         return f"Starting local stdio server: {self.command} {' '.join(self.args)}"
 
     async def __aenter__(self):
-        #TODO:
-        # 1. Call `_build_server_params()` and assign to `server_params`
-        # 2. Print startup message via `_startup_message()`
-        # 3. Create `Client(server_params)` and assign to `self.client` (Client spawns the process)
-        # 4. Call `await self.client.__aenter__()`. Client sends `server/discover` first. Servers that don't support
-        #    stateless MCP (2026-07-28) answer with an error and Client falls back to the legacy `initialize` handshake
-        # 5. Print f"Connected to {self.client.server_info} (protocol version {self.client.protocol_version})" and
-        #    f"Capabilities: {self.client.server_capabilities.model_dump_json(indent=2, exclude_none=True)}"
-        # 6. Return self
-        raise NotImplementedError()
+        server_params = self._build_server_params()
+        print(self._startup_message())
+        self.client = Client(server_params)
+        await self.client.__aenter__()
+        print(f"Connected to {self.client.server_info} (protocol version {self.client.protocol_version})")
+        print(f"Capabilities: {self.client.server_capabilities.model_dump_json(indent=2, exclude_none=True)}")
+        return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        #TODO:
-        # This is the shutdown method.
-        # If `self.client` is present, call `await self.client.__aexit__(exc_type, exc_val, exc_tb)` and set `self.client = None`
-        raise NotImplementedError()
+        if self.client:
+            await self.client.__aexit__(exc_type, exc_val, exc_tb)
+            self.client = None

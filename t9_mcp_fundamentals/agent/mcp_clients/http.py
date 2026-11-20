@@ -11,17 +11,13 @@ class HttpMCPClient(MCPClient):
         self.mcp_server_url = mcp_server_url
 
     async def __aenter__(self):
-        #TODO:
-        # 1. Create `Client(self.mcp_server_url)` and assign to `self.client`
-        # 2. Call `await self.client.__aenter__()`. Client calls `server/discover` to select the protocol version.
-        #    There is no handshake and no session (stateless MCP): every request carries its protocol version in `_meta`
-        # 3. Print f"Connected to {self.client.server_info} (protocol version {self.client.protocol_version})" and
-        #    `self.client.server_capabilities.model_dump_json(indent=2, exclude_none=True)` (to check capabilities of MCP server later)
-        # 4. return self
-        raise NotImplementedError()
+        self.client = Client(self.mcp_server_url)
+        await self.client.__aenter__()
+        print(f"Connected to {self.client.server_info} (protocol version {self.client.protocol_version})")
+        print(self.client.server_capabilities.model_dump_json(indent=2, exclude_none=True))
+        return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        #TODO:
-        # This is shutdown method.
-        # If `self.client` is present then call `await self.client.__aexit__(exc_type, exc_val, exc_tb)` and set `self.client = None`
-        raise NotImplementedError()
+        if self.client:
+            await self.client.__aexit__(exc_type, exc_val, exc_tb)
+            self.client = None
